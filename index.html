@@ -730,26 +730,26 @@
                 <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Selected full-stack and web projects showcasing clean architecture, responsive UI, and backend integration.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Project 1: Full-Stack E-Commerce Web Application (Real Repo) -->
-                <div class="project-card rounded-2xl overflow-hidden flex flex-col">
-                    <div class="h-56 overflow-hidden relative group">
-                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" 
+            <div class="max-w-3xl mx-auto">
+                <!-- Featured Project: Full-Stack E-Commerce Web Application (Clickable Card) -->
+                <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer"
+                   class="project-card rounded-2xl overflow-hidden flex flex-col group cursor-pointer block">
+                    <div class="h-64 sm:h-72 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1000&q=80" 
                              alt="Full-Stack E-Commerce Platform" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer"
-                               class="px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition">
-                                <i class="fab fa-github mr-1"></i> View Repository
-                            </a>
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold shadow-lg inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> Visit Live Repository
+                            </span>
                         </div>
                     </div>
                     <div class="p-6 sm:p-8 flex flex-col flex-grow">
                         <div class="flex items-center justify-between mb-3">
                             <span class="text-xs uppercase font-bold tracking-wider text-primary">Full-Stack Web App</span>
-                            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full border border-slate-700">Featured</span>
+                            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full border border-slate-700">Featured Project</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Full-Stack E-Commerce Platform</h3>
+                        <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-primary transition-colors">Full-Stack E-Commerce Platform</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
                             A complete Flask &amp; PostgreSQL e-commerce platform featuring role-based authentication (customer &amp; admin), secure password resets, checkout &amp; order tracking, customer reviews, an admin order-management dashboard, CSRF/XSS/Turnstile security hardening, and automated SMTP &amp; Telegram notifications.
                         </p>
@@ -763,59 +763,15 @@
                         </div>
                         
                         <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                            <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer" 
-                               class="text-sm font-semibold text-primary hover:text-white transition inline-flex items-center gap-2">
-                                <i class="fab fa-github"></i> Live GitHub Repository
-                            </a>
-                            <span class="text-xs font-medium text-slate-400 inline-flex items-center gap-1.5">
-                                <i class="fas fa-shield-alt text-emerald-400"></i> Flask + PostgreSQL
+                            <span class="text-sm font-semibold text-primary group-hover:text-white transition inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> github.com/ezoxkr-dev/ecommerce_website
+                            </span>
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-primary transition inline-flex items-center gap-2">
+                                Open Project <i class="fas fa-external-link-alt text-xs"></i>
                             </span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Project 2: Personal Developer Portfolio -->
-                <div class="project-card rounded-2xl overflow-hidden flex flex-col">
-                    <div class="h-56 overflow-hidden relative group">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" 
-                             alt="Personal Developer Portfolio" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a href="https://ezoxkr-dev.github.io/own-portfolio/" target="_blank" rel="noopener noreferrer"
-                               class="px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition">
-                                <i class="fas fa-external-link-alt mr-1"></i> Open Live Site
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-secondary">Frontend &amp; Deployment</span>
-                            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full border border-slate-700">Live Site</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Personal Developer Portfolio</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                            A responsive, dark-themed developer portfolio built with Tailwind CSS and JavaScript to showcase my academic background, core technical stack, and software projects, hosted live on GitHub Pages.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">HTML5</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">JavaScript</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">GitHub Pages</span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                            <a href="https://github.com/ezoxkr-dev/own-portfolio" target="_blank" rel="noopener noreferrer" 
-                               class="text-sm font-semibold text-slate-300 hover:text-secondary transition inline-flex items-center gap-2">
-                                <i class="fab fa-github"></i> GitHub Source
-                            </a>
-                            <a href="https://ezoxkr-dev.github.io/own-portfolio/" target="_blank" rel="noopener noreferrer"
-                               class="text-sm font-semibold text-secondary hover:text-white transition inline-flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Live Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
