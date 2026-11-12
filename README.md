@@ -1,6 +1,6 @@
 # Mustarif Alom — Personal Portfolio
 
-Welcome to the official repository for my personal d portfolio website.
+Welcome to the official repository for my personal  portfolio website.
 
 🌐 **Live Website**: [https://ezoxkr-dev.github.io/own-portfolio/](https://mustarif-alom.github.io/own-portfolio/)
 
