@@ -4,11 +4,6 @@ Welcome to the official repository for my personal d portfolio website.
 
 🌐 **Live Website**: [https://ezoxkr-dev.github.io/own-portfolio/](https://mustarif-alom.github.io/own-portfolio/)
 
-
-
-## 🚀 About The P
-
-
 ## 🛠️ Tech Stack & Tools
 
 - **Frontend**: HTML5, Tailwind CSS, JavaScript (ES6+)
