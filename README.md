@@ -1,22 +1,13 @@
 # Mustarif Alom — Personal Portfolio
 
-Welcome to the official repository for my personal developer portfolio website.
+Welcome to the official repository for my personal d portfolio website.
 
-🌐 **Live Website**: [https://ezoxkr-dev.github.io/own-portfolio/](https://ezoxkr-dev.github.io/own-portfolio/)
+🌐 **Live Website**: [https://ezoxkr-dev.github.io/own-portfolio/](https://mustarif-alom.github.io/own-portfolio/)
 
----
 
-## 🚀 About The Project
 
-A modern, responsive web developer portfolio crafted to showcase my projects, technical skill set, academic background, and competitive programming achievements.
+## 🚀 About The P
 
-### ✨ Key Highlights
-- **Modern Dark Theme Aesthetic**: Built with Tailwind CSS featuring custom glassmorphism and gradient accents.
-- **Interactive Components**: Dynamic animated skill progress bars, smooth anchor scrolling, interactive project showcases, and a responsive mobile drawer navigation.
-- **Fully Responsive**: Optimized for desktops, tablets, and mobile devices.
-- **Functional Contact Interface**: Integrated contact form with instant validation feedback.
-
----
 
 ## 🛠️ Tech Stack & Tools
 
