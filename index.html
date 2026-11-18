@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustarif Alom | Final-Year Computer Science Undergraduate</title>
+    <title>Mustarif Alom | Software Engineer & AI Systems</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -19,15 +19,18 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0ea5e9',    /* Cyan */
-                        secondary: '#7e22ce',  /* Purple */
-                        accent: '#38bdf8',
-                        dark: '#0f172a',       /* Slate 900 */
-                        darker: '#020617',     /* Slate 950 */
-                        cardDark: '#1e293b',   /* Slate 800 */
+                        primary: '#0ea5e9',    /* Sky 500 */
+                        primaryDark: '#0284c7',/* Sky 600 */
+                        secondary: '#8b5cf6',  /* Violet 500 */
+                        accent: '#38bdf8',     /* Sky 400 */
+                        dark: '#0a0f1d',       /* Deep Navy */
+                        darker: '#060913',     /* Deepest Dark */
+                        cardDark: '#111827',   /* Gray 900 */
+                        cardBorder: '#1f2937', /* Gray 800 */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                     },
                 }
             }
@@ -36,25 +39,25 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
+            background-color: #0a0f1d;
             color: #e2e8f0;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         /* Gradient text */
         .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 50%, #7e22ce 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #0ea5e9 0%, #7e22ce 100%);
-        }
-
         .gradient-border {
-            border-image: linear-gradient(135deg, #0ea5e9, #7e22ce) 1;
+            border-image: linear-gradient(135deg, #38bdf8, #8b5cf6) 1;
         }
         
         /* Interactive Cards */
@@ -63,8 +66,9 @@
         }
         
         .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px -5px rgba(14, 165, 233, 0.25), 0 0 15px rgba(126, 34, 206, 0.2);
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 16px 32px -8px rgba(14, 165, 233, 0.2), 0 0 16px rgba(139, 92, 246, 0.15);
         }
         
         /* Nav link underline effect */
@@ -80,7 +84,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background: linear-gradient(90deg, #0ea5e9, #7e22ce);
+            background: linear-gradient(90deg, #38bdf8, #8b5cf6);
             transition: width 0.3s ease;
         }
         
@@ -102,9 +106,9 @@
             border-radius: 50%;
             left: -8px;
             top: 24px;
-            background: linear-gradient(135deg, #0ea5e9, #7e22ce);
-            border: 3px solid #0f172a;
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
+            background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+            border: 3px solid #0a0f1d;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
         }
         
         @media (min-width: 768px) {
@@ -114,69 +118,35 @@
             }
         }
         
-        /* Skill Progress Bars */
-        .skill-bar {
-            height: 9px;
-            border-radius: 6px;
-            background-color: #1e293b;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            border-radius: 6px;
-            background: linear-gradient(90deg, #0ea5e9 0%, #a855f7 60%, #7e22ce 100%);
-            width: 0%;
-            transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-            position: relative;
-        }
-        
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
         /* Project Cards */
         .project-card {
-            background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid rgba(51, 65, 85, 0.6);
+            background: linear-gradient(160deg, #111827 0%, #0a0f1d 100%);
+            border: 1px solid rgba(55, 65, 81, 0.7);
             transition: all 0.35s ease;
         }
         
         .project-card:hover {
-            border-color: rgba(14, 165, 233, 0.5);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(14, 165, 233, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.25);
         }
         
         /* Form inputs */
         .contact-input {
-            background-color: #1e293b;
-            border: 1px solid #334155;
+            background-color: #111827;
+            border: 1px solid #374151;
             transition: all 0.3s ease;
         }
         
         .contact-input:focus {
-            border-color: #0ea5e9;
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
             background-color: #0f172a;
         }
         
         /* Primary button */
         .btn-primary {
-            background: linear-gradient(135deg, #0ea5e9 0%, #7e22ce 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
             transition: all 0.3s ease;
             position: relative;
             z-index: 1;
@@ -187,7 +157,7 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             border-radius: inherit;
-            background: linear-gradient(135deg, #7e22ce 0%, #0ea5e9 100%);
+            background: linear-gradient(135deg, #7c3aed 0%, #0284c7 100%);
             opacity: 0;
             z-index: -1;
             transition: opacity 0.3s ease;
@@ -199,20 +169,22 @@
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+            box-shadow: 0 8px 22px rgba(14, 165, 233, 0.4);
         }
 
         .btn-secondary {
-            border: 1px solid #0ea5e9;
+            border: 1px solid rgba(56, 189, 248, 0.6);
             color: #38bdf8;
+            background: rgba(14, 165, 233, 0.05);
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(14, 165, 233, 0.15);
+            background-color: rgba(14, 165, 233, 0.18);
+            border-color: #38bdf8;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
         }
         
         /* Floating social icons */
@@ -221,7 +193,7 @@
         }
         
         .social-icon:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(14, 165, 233, 0.4);
             color: #ffffff;
         }
@@ -232,23 +204,23 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-12px);
+                transform: translateY(-10px);
             }
         }
         
         .floating {
-            animation: float 4s ease-in-out infinite;
+            animation: float 4.5s ease-in-out infinite;
         }
 
         /* Pulse glow */
         @keyframes pulseGlow {
             0%, 100% {
-                opacity: 0.35;
+                opacity: 0.3;
                 transform: scale(1);
             }
             50% {
-                opacity: 0.65;
-                transform: scale(1.05);
+                opacity: 0.6;
+                transform: scale(1.04);
             }
         }
 
@@ -261,14 +233,14 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #020617;
+            background: #060913;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #374151;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0ea5e9;
+            background: #38bdf8;
         }
     </style>
 </head>
@@ -279,7 +251,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#home" class="text-2xl font-extrabold tracking-tight">
+                <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight font-heading">
                     <span class="gradient-text">&lt;Mustarif /&gt;</span>
                 </a>
                 
@@ -287,12 +259,12 @@
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
-                    <a href="#skills" class="nav-link text-slate-300 hover:text-white">Skills</a>
                     <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-white">Skills &amp; AI</a>
                     <a href="#experience" class="nav-link text-slate-300 hover:text-white">Experience</a>
                     <a href="#contact" class="nav-link text-slate-300 hover:text-white">Contact</a>
                     <a href="#contact" class="ml-4 px-5 py-2 rounded-full btn-primary text-white text-xs uppercase tracking-wider font-semibold shadow-md">
-                        Hire Me
+                        Get In Touch
                     </a>
                 </div>
 
@@ -308,11 +280,11 @@
             <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-800 space-y-3 pb-2 text-center">
                 <a href="#home" class="block py-2 nav-link active">Home</a>
                 <a href="#about" class="block py-2 nav-link text-slate-300">About</a>
-                <a href="#skills" class="block py-2 nav-link text-slate-300">Skills</a>
                 <a href="#projects" class="block py-2 nav-link text-slate-300">Projects</a>
+                <a href="#skills" class="block py-2 nav-link text-slate-300">Skills &amp; AI</a>
                 <a href="#experience" class="block py-2 nav-link text-slate-300">Experience</a>
                 <a href="#contact" class="block py-2 nav-link text-slate-300">Contact</a>
-                <a href="#contact" class="inline-block mt-2 px-6 py-2 rounded-full btn-primary text-white font-semibold">Hire Me</a>
+                <a href="#contact" class="inline-block mt-2 px-6 py-2 rounded-full btn-primary text-white font-semibold text-sm">Get In Touch</a>
             </div>
         </div>
     </nav>
@@ -327,57 +299,57 @@
             <!-- Left Hero Content -->
             <div class="md:w-1/2 text-center md:text-left">
                 <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-slate-300 mb-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-xs font-medium text-slate-300 mb-6 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Available for internships & collaborations
+                    <span>Final-Year CSE @ Varendra University &bull; Open to Roles</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight font-heading">
                     Hi, I'm <span class="gradient-text">Mustarif Alom</span>
                 </h1>
                 
-                <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-slate-300 flex items-center justify-center md:justify-start gap-2">
-                    <i class="fas fa-graduation-cap text-primary"></i>
-                    <span>Final-Year Computer Science Undergraduate</span>
+                <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-slate-300 flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-terminal text-primary"></i>
+                    <span>Full-Stack Engineer &amp; AI Systems Builder</span>
                 </h2>
                 
                 <p class="text-base sm:text-lg mb-8 text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                    Driven by core computer science fundamentals and a passion for building reliable software. 
-                    Focused on Python &amp; Flask backend development, relational databases, and clean responsive web interfaces.
+                    Engineering reliable full-stack web applications and intelligent vector-driven search systems. Experienced with 
+                    <strong class="text-slate-200 font-semibold">Python, Flask, Next.js 16, pgvector &amp; Google Gemini Embeddings</strong>, alongside research in deep learning for biomedical signals.
                 </p>
 
                 <!-- Call to Action Buttons -->
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
-                    <a href="#contact" class="px-7 py-3 rounded-full btn-primary text-white font-medium shadow-lg inline-flex items-center gap-2">
-                        <span>Get In Touch</span>
-                        <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                    <a href="#projects" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2">
+                    <a href="#projects" class="px-7 py-3 rounded-full btn-primary text-white font-medium shadow-lg inline-flex items-center gap-2">
                         <span>View Projects</span>
-                        <i class="fas fa-code text-xs"></i>
+                        <i class="fas fa-arrow-down text-xs"></i>
                     </a>
-                    <a href="#experience" class="px-7 py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium inline-flex items-center gap-2 transition">
-                        <i class="fas fa-graduation-cap text-xs text-primary"></i>
-                        <span>Education</span>
+                    <a href="#contact" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-envelope text-xs"></i>
+                    </a>
+                    <a href="#about" class="px-6 py-3 rounded-full bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium inline-flex items-center gap-2 transition text-sm">
+                        <i class="fas fa-user text-xs text-primary"></i>
+                        <span>About Me</span>
                     </a>
                 </div>
 
                 <!-- Social Links -->
                 <div class="flex items-center justify-center md:justify-start mt-10 space-x-4">
                     <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-primary" title="GitHub">
+                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-primary" title="GitHub">
                         <i class="fab fa-github text-xl"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600" title="LinkedIn">
+                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-blue-600" title="LinkedIn">
                         <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
                     <a href="tel:+8801780109125" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-emerald-600" title="Call Me">
+                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-emerald-600" title="Call Me">
                         <i class="fas fa-phone text-base"></i>
                     </a>
                     <a href="mailto:mustarifalom10@gmail.com" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-purple-600" title="Email Me">
+                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-purple-600" title="Email Me">
                         <i class="fas fa-envelope text-lg"></i>
                     </a>
                 </div>
@@ -400,11 +372,11 @@
                     </div>
 
                     <!-- Floating Technology Badges -->
-                    <div class="absolute -top-2 right-4 bg-slate-800/90 border border-slate-700/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 text-xs font-semibold text-slate-200">
-                        <i class="fab fa-python text-yellow-400"></i> Python &amp; Flask
+                    <div class="absolute -top-2 right-4 bg-slate-900/95 border border-slate-700/80 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-xl flex items-center gap-2 text-xs font-semibold text-slate-200">
+                        <i class="fas fa-brain text-purple-400"></i> Next.js 16 &amp; Vector AI
                     </div>
-                    <div class="absolute bottom-4 -left-2 bg-slate-800/90 border border-slate-700/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 text-xs font-semibold text-slate-200">
-                        <i class="fas fa-database text-sky-400"></i> PostgreSQL &amp; Web
+                    <div class="absolute bottom-4 -left-2 bg-slate-900/95 border border-slate-700/80 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-xl flex items-center gap-2 text-xs font-semibold text-slate-200">
+                        <i class="fab fa-python text-sky-400"></i> Python &amp; PostgreSQL
                     </div>
                 </div>
             </div>
@@ -415,9 +387,9 @@
     <section id="about" class="py-24 bg-darker relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">About <span class="gradient-text">Me</span></h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">About <span class="gradient-text">Me</span></h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">A brief glimpse into my background, academic journey, and what fuels my curiosity in technology.</p>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">A practical engineer building software with real utility, security, and intelligence.</p>
             </div>
             
             <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
@@ -425,16 +397,17 @@
                 <div class="lg:w-1/3 flex justify-center">
                     <div class="relative w-72 h-80 sm:w-80 sm:h-96">
                         <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-secondary blur-xl opacity-25"></div>
-                        <div class="relative w-full h-full rounded-2xl overflow-hidden border-2 border-slate-700/80 shadow-2xl bg-slate-800">
+                        <div class="relative w-full h-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800">
                             <img src="images/profile.jpg" 
                                  alt="Mustarif Alom" 
                                  class="w-full h-full object-cover object-top">
                             <div class="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent"></div>
                             <div class="absolute bottom-4 left-4 right-4 text-center">
                                 <span class="inline-block px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs text-primary font-medium mb-1">
-                                    Software Enthusiast
+                                    Software &amp; AI
                                 </span>
-                                <h3 class="text-lg font-bold text-white">Continuous Learner</h3>
+                                <h3 class="text-base font-bold text-white">Mustarif Alom</h3>
+                                <p class="text-xs text-slate-400">Varendra University &bull; 33rd Batch</p>
                             </div>
                         </div>
                     </div>
@@ -442,29 +415,29 @@
                 
                 <!-- About Info Details -->
                 <div class="lg:w-2/3">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-100">
-                        Who am I?
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-100 font-heading">
+                        Building Scalable Software with Modern AI Integration
                     </h3>
-                    <p class="text-slate-300 leading-relaxed mb-6 text-base">
-                        I am a final-year <strong>Computer Science &amp; Engineering undergraduate</strong> (enrolled June 2023) passionate about building a strong foundation in core computer science, data structures, and full-stack software development. My hands-on work focuses on 
-                        <strong>Python, Flask, HTML5/CSS3, Tailwind CSS, JavaScript, and PostgreSQL/SQL databases</strong>.
+                    <p class="text-slate-300 leading-relaxed mb-5 text-base">
+                        I am a final-year <strong>Computer Science &amp; Engineering undergraduate at Varendra University</strong> (Rajshahi, Bangladesh) graduating in May 2027. My work bridges 
+                        <strong>full-stack web development</strong> with <strong>applied AI systems</strong>, focusing on clean software architecture, database design, and real-world performance.
                     </p>
                     <p class="text-slate-400 leading-relaxed mb-8 text-base">
-                        Beyond university coursework, I enjoy turning ideas into practical, secure web applications—from authentication and relational database modeling to responsive user interfaces—while sharpening my problem-solving skills.
+                        Recently, as part of my <strong>Industrial Attachment (33rd batch)</strong>, I built <strong>VU Knowledgebase</strong>—a semantic search and document ingestion system leveraging Next.js 16, PostgreSQL, <code class="text-sky-300 bg-slate-800 px-1.5 py-0.5 rounded text-xs">pgvector</code>, and Google Gemini embeddings. In parallel, I operate my online software venture (<strong>Ezox Bypass</strong>) and am conducting undergraduate research on <strong>Interpretable CNN-Transformer deep learning models</strong> for EEG emotion recognition.
                     </p>
                     
                     <!-- Quick Info Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-slate-900/60 p-6 rounded-xl border border-slate-800">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                         <div class="space-y-3 text-sm">
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-user text-primary w-5"></i>
-                                <span class="text-slate-400">Name:</span>
-                                <span class="text-slate-200 font-semibold">Mustarif Alom</span>
+                                <i class="fas fa-university text-primary w-5"></i>
+                                <span class="text-slate-400">University:</span>
+                                <span class="text-slate-200 font-semibold">Varendra University, Rajshahi</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i class="fas fa-university text-primary w-5"></i>
+                                <i class="fas fa-graduation-cap text-primary w-5"></i>
                                 <span class="text-slate-400">Degree:</span>
-                                <span class="text-slate-200 font-semibold">B.Sc. in Computer Science &amp; Eng.</span>
+                                <span class="text-slate-200 font-semibold">B.Sc. in CSE (Final Year)</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-envelope text-primary w-5"></i>
@@ -481,44 +454,24 @@
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-map-marker-alt text-primary w-5"></i>
                                 <span class="text-slate-400">Location:</span>
-                                <span class="text-slate-200 font-semibold">Bangladesh</span>
+                                <span class="text-slate-200 font-semibold">Rajshahi, Bangladesh</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-check-circle text-emerald-400 w-5"></i>
                                 <span class="text-slate-400">Status:</span>
-                                <span class="text-emerald-400 font-semibold">Open to Internships</span>
+                                <span class="text-emerald-400 font-semibold">Open to Engineering Roles</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Quick Highlights -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                        <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl text-center">
-                            <span class="block text-xl sm:text-2xl font-extrabold gradient-text">Final Year</span>
-                            <span class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1 block">B.Sc. in CSE</span>
-                        </div>
-                        <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl text-center">
-                            <span class="block text-xl sm:text-2xl font-extrabold gradient-text">Flask &amp; SQL</span>
-                            <span class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1 block">Backend Focus</span>
-                        </div>
-                        <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl text-center">
-                            <span class="block text-xl sm:text-2xl font-extrabold gradient-text">2023–2027</span>
-                            <span class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1 block">Academic Span</span>
-                        </div>
-                        <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl text-center">
-                            <span class="block text-xl sm:text-2xl font-extrabold gradient-text">Open</span>
-                            <span class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1 block">For Opportunities</span>
-                        </div>
-                    </div>
-
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="px-7 py-3 rounded-full btn-primary text-white font-medium inline-flex items-center gap-2">
-                            <span>Get In Touch</span>
-                            <i class="fas fa-paper-plane text-xs"></i>
-                        </a>
-                        <a href="#projects" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2">
+                        <a href="#projects" class="px-7 py-3 rounded-full btn-primary text-white font-medium inline-flex items-center gap-2 text-sm">
                             <span>Explore Projects</span>
-                            <i class="fas fa-arrow-down text-xs"></i>
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#skills" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2 text-sm">
+                            <span>Technical Stack</span>
+                            <i class="fas fa-layer-group text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -526,256 +479,309 @@
         </div>
     </section>
 
-    <!-- ================= SKILLS SECTION ================= -->
-    <section id="skills" class="py-24 bg-dark relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">My <span class="gradient-text">Skills</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Technologies, programming languages, and engineering concepts I work with regularly.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
-                <!-- Technical Skills (Bars) -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-700/60 shadow-xl">
-                    <h3 class="text-xl sm:text-2xl font-bold mb-6 text-white flex items-center gap-3">
-                        <i class="fas fa-laptop-code text-primary"></i>
-                        <span>Technical Skills</span>
-                    </h3>
-                    
-                    <div class="space-y-6">
-                        <!-- Skill 1 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">HTML5 / CSS3 / Tailwind CSS</span>
-                                <span class="text-primary font-semibold text-sm">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Skill 2 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">Python &amp; Flask</span>
-                                <span class="text-primary font-semibold text-sm">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 3 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">PostgreSQL &amp; SQL Databases</span>
-                                <span class="text-primary font-semibold text-sm">82%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="82%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 4 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">JavaScript (ES6+)</span>
-                                <span class="text-primary font-semibold text-sm">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 5 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">C / C++ &amp; Core CS (DSA, OOP)</span>
-                                <span class="text-primary font-semibold text-sm">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 6 -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium text-slate-200">Git &amp; GitHub</span>
-                                <span class="text-primary font-semibold text-sm">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Core Engineering Competencies -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-700/60 shadow-xl flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-white flex items-center gap-3">
-                            <i class="fas fa-layer-group text-secondary"></i>
-                            <span>Core Engineering Focus</span>
-                        </h3>
-                        
-                        <div class="space-y-4">
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-                                <i class="fas fa-server text-primary mt-1"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-slate-100">Full-Stack Web Architecture</h4>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Building structured Flask applications with Jinja2 templating, authentication flows, and role-based access control.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-                                <i class="fas fa-database text-purple-400 mt-1"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-slate-100">Relational Database Design</h4>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Modeling normalized PostgreSQL schemas, foreign-key constraints, and safe parameterized SQL queries.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-                                <i class="fas fa-shield-alt text-emerald-400 mt-1"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-slate-100">Web Security &amp; Hardening</h4>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Applying CSRF protection, password hashing, HTML sanitization, CSP headers, and Turnstile bot protection.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-                                <i class="fas fa-sitemap text-amber-400 mt-1"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-slate-100">CS Fundamentals &amp; Problem Solving</h4>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Applying Data Structures, Algorithms, and Object-Oriented Design in C, C++, and Python.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tools & Technologies Grid -->
-            <div class="max-w-5xl mx-auto">
-                <h3 class="text-2xl font-bold mb-10 text-center text-slate-100">
-                    Tools &amp; <span class="gradient-text">Technologies</span>
-                </h3>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
-                    <!-- Python -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-python text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">Python</span>
-                    </div>
-
-                    <!-- Flask -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fas fa-flask text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">Flask</span>
-                    </div>
-
-                    <!-- PostgreSQL -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fas fa-database text-4xl text-indigo-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">PostgreSQL</span>
-                    </div>
-
-                    <!-- HTML5 -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-html5 text-4xl text-orange-500 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">HTML5</span>
-                    </div>
-
-                    <!-- CSS3 -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">CSS3</span>
-                    </div>
-
-                    <!-- Tailwind -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fas fa-wind text-4xl text-teal-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">Tailwind CSS</span>
-                    </div>
-
-                    <!-- JavaScript -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-js text-4xl text-yellow-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">JavaScript</span>
-                    </div>
-
-                    <!-- C / C++ -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fas fa-code text-4xl text-sky-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">C / C++</span>
-                    </div>
-
-                    <!-- Git -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-git-alt text-4xl text-orange-600 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">Git</span>
-                    </div>
-
-                    <!-- GitHub -->
-                    <div class="flex flex-col items-center justify-center p-6 bg-slate-800/90 hover:bg-slate-800 rounded-xl border border-slate-700/60 card-hover group">
-                        <i class="fab fa-github text-4xl text-slate-200 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold text-slate-200">GitHub</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="py-24 bg-darker relative">
+    <section id="projects" class="py-24 bg-dark relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">My <span class="gradient-text">Projects</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
+                    <i class="fas fa-code"></i> Engineering Showcase
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Featured <span class="gradient-text">Projects</span></h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Selected full-stack and web projects showcasing clean architecture, responsive UI, and backend integration.</p>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">Real systems, vector search pipelines, and full-stack software backed by public repositories.</p>
             </div>
             
-            <div class="max-w-3xl mx-auto">
-                <!-- Featured Project: Full-Stack E-Commerce Web Application (Clickable Card) -->
-                <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer"
-                   class="project-card rounded-2xl overflow-hidden flex flex-col group cursor-pointer block">
-                    <div class="h-64 sm:h-72 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1000&q=80" 
-                             alt="Full-Stack E-Commerce Platform" 
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <!-- Project 1: VU Knowledgebase (Semantic Search & Vector AI) -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                             alt="VU Knowledgebase - Semantic Search" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold shadow-lg inline-flex items-center gap-2">
-                                <i class="fab fa-github"></i> Visit Live Repository
-                            </span>
+                            <a href="https://github.com/ASTGD/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
+                               class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primaryDark transition shadow-lg inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> Open Repository
+                            </a>
                         </div>
                     </div>
-                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-primary">Full-Stack Web App</span>
-                            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full border border-slate-700">Featured Project</span>
+                            <span class="text-xs uppercase font-bold tracking-wider text-purple-400">AI &amp; Semantic Search</span>
+                            <span class="text-xs bg-purple-500/10 text-purple-300 border border-purple-500/30 px-2.5 py-0.5 rounded-full font-medium">Attachment Project</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-primary transition-colors">Full-Stack E-Commerce Platform</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                            A complete Flask &amp; PostgreSQL e-commerce platform featuring role-based authentication (customer &amp; admin), secure password resets, checkout &amp; order tracking, customer reviews, an admin order-management dashboard, CSRF/XSS/Turnstile security hardening, and automated SMTP &amp; Telegram notifications.
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
+                            VU Knowledgebase
+                        </h3>
+                        <p class="text-xs font-medium text-slate-400 mb-3">
+                            Document Ingestion &amp; Vector Search Platform
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
+                            An intelligent document ingestion and semantic search engine developed for Varendra University (33rd batch). Extracts text from PDF/DOCX uploads, splits into ~1,200-char overlapping chunks, generates 3072-dimensional vector embeddings with Google Gemini (<code class="text-sky-300 text-xs">gemini-embedding-001</code>), and executes similarity search via PostgreSQL <code class="text-sky-300 text-xs">pgvector</code> with queue resumption.
                         </p>
                         
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">Python</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">Flask</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">PostgreSQL</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">HTML5 / CSS3</span>
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700">JavaScript</span>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Next.js 16</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">pgvector</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Google Gemini API</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">TypeScript</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Fluid Compute</span>
                         </div>
                         
                         <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                            <span class="text-sm font-semibold text-primary group-hover:text-white transition inline-flex items-center gap-2">
-                                <i class="fab fa-github"></i> github.com/ezoxkr-dev/ecommerce_website
-                            </span>
-                            <span class="text-sm font-semibold text-slate-200 group-hover:text-primary transition inline-flex items-center gap-2">
-                                Open Project <i class="fas fa-external-link-alt text-xs"></i>
+                            <a href="https://github.com/ASTGD/VUKnowledgebase" target="_blank" rel="noopener noreferrer" 
+                               class="text-sm font-semibold text-primary hover:text-white transition inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> ASTGD/VUKnowledgebase
+                            </a>
+                            <span class="text-xs font-medium text-slate-400">
+                                <i class="fas fa-check-circle text-emerald-400"></i> Vector AI
                             </span>
                         </div>
                     </div>
-                </a>
+                </div>
+
+                <!-- Project 2: Full-Stack E-Commerce Platform -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Full-Stack E-Commerce Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer"
+                               class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primaryDark transition shadow-lg inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> Open Repository
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-sky-400">Full-Stack Web App</span>
+                            <span class="text-xs bg-sky-500/10 text-sky-300 border border-sky-500/30 px-2.5 py-0.5 rounded-full font-medium">Production Backend</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
+                            Full-Stack E-Commerce Store
+                        </h3>
+                        <p class="text-xs font-medium text-slate-400 mb-3">
+                            Python, Flask &amp; PostgreSQL Platform
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
+                            A complete digital storefront engineered with Python and Flask. Implements role-based authentication (customer and admin), secure token-based password reset, checkout flows, order tracking, and an admin management portal. Features strict security hardening with CSRF protection, bleach sanitization, CSP/HSTS, and automated SMTP/Telegram alerts.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Flask</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Tailwind CSS</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Security Hardening</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer" 
+                               class="text-sm font-semibold text-primary hover:text-white transition inline-flex items-center gap-2">
+                                <i class="fab fa-github"></i> ezoxkr-dev/ecommerce_website
+                            </a>
+                            <span class="text-xs font-medium text-slate-400">
+                                <i class="fas fa-shield-alt text-sky-400"></i> Hardened
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Interpretable CNN-Transformer EEG Thesis -->
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80" 
+                             alt="EEG Emotion Recognition" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-4 py-2 rounded-full bg-secondary text-white text-xs font-semibold shadow-lg inline-flex items-center gap-2">
+                                <i class="fas fa-microscope"></i> Final-Year Research
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-pink-400">Deep Learning &bull; Thesis</span>
+                            <span class="text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30 px-2.5 py-0.5 rounded-full font-medium">Undergraduate Thesis</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
+                            Interpretable CNN-Transformer
+                        </h3>
+                        <p class="text-xs font-medium text-slate-400 mb-3">
+                            Cross-Dataset EEG Emotion Recognition
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
+                            Final-year research investigating a hybrid Convolutional Neural Network (CNN) and Transformer architecture for emotion classification from brainwave signals across heterogeneous datasets. Focuses on learning spatial-temporal representations while providing interpretability into neurological signal features across diverse subject cohorts.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Deep Learning</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Transformers</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">CNNs</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">EEG Processing</span>
+                            <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Interpretability</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-sm font-semibold text-slate-300 inline-flex items-center gap-2">
+                                <i class="fas fa-graduation-cap text-pink-400"></i> Varendra University
+                            </span>
+                            <span class="text-xs font-medium text-amber-400">
+                                <i class="fas fa-spinner fa-spin text-xs mr-1"></i> In Progress
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS & AI SECTION ================= -->
+    <section id="skills" class="py-24 bg-darker relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-xs font-semibold text-secondary mb-3">
+                    <i class="fas fa-layer-group"></i> Technical Competencies
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Skills &amp; <span class="gradient-text">AI Experience</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Technologies, modern AI APIs, and core computer science fundamentals I apply daily.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                
+                <!-- Card 1: AI, Vector Search & Embeddings -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">AI &amp; Vector Search</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Vector-driven semantic search, RAG document processing, and deep learning neural architectures.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">pgvector</span>
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">Google Gemini Embeddings</span>
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">Semantic Search</span>
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">RAG Pipelines</span>
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">CNN-Transformer</span>
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md text-xs font-medium">Text Chunking &amp; NLP</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Full-Stack & Backend -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">Full-Stack &amp; Backend</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Building production backend services, server-side templating, and modern Node/Python runtimes.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">Python</span>
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">Flask</span>
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">Next.js 16 (App Router)</span>
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">Node.js</span>
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">RESTful APIs</span>
+                        <span class="px-2.5 py-1 bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-md text-xs font-medium">JWT &amp; Session Auth</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Databases & Storage -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">Databases &amp; Storage</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Designing normalized relational schemas, safe parameterized queries, and vector indexes.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">PostgreSQL</span>
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">pgvector (HNSW / IVFFlat)</span>
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">SQLite</span>
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">psycopg2</span>
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">Database Normalization</span>
+                        <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md text-xs font-medium">Transaction Safety</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Frontend & UI Design -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">Frontend &amp; UI Design</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Crafting clean, accessible, mobile-first interfaces with modern JavaScript and utility styling.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">HTML5 &amp; CSS3</span>
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">Tailwind CSS (v3 / v4)</span>
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">JavaScript (ES6+)</span>
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">React 19</span>
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">TypeScript</span>
+                        <span class="px-2.5 py-1 bg-teal-500/10 text-teal-300 border border-teal-500/20 rounded-md text-xs font-medium">Responsive Layouts</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Core CS & Programming -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">Core CS Fundamentals</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Firm grounding in academic computing principles, low-level concepts, and algorithms.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">C &amp; C++</span>
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">Java</span>
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">Data Structures &amp; Algorithms</span>
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">Object-Oriented Design (OOP)</span>
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">Operating Systems</span>
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-md text-xs font-medium">Computer Networks</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: DevOps, Security & Tools -->
+                <div class="bg-cardDark p-7 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 font-heading">Security &amp; DevOps</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                            Version control, deployment pipelines, bot verification, and web vulnerability mitigation.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">Git &amp; GitHub</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">Vercel &amp; Fluid Compute</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">GitHub Pages</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">CSRF &amp; XSS Defense</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">Cloudflare Turnstile</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-md text-xs font-medium">VS Code &amp; Postman</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -784,27 +790,34 @@
     <section id="experience" class="py-24 bg-dark relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Education &amp; <span class="gradient-text">Experience</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
+                    <i class="fas fa-briefcase"></i> Background &amp; Milestones
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Education &amp; <span class="gradient-text">Experience</span></h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">My undergraduate journey, online business venture, and practical software engineering work.</p>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">My academic timeline, industrial attachment project, and active software business.</p>
             </div>
             
             <div class="relative max-w-3xl mx-auto pl-6 md:pl-0">
                 <!-- Center vertical line for desktop, left for mobile -->
                 <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 transform md:-translate-x-1/2"></div>
                 
-                <!-- Item 1: Undergraduate Degree -->
+                <!-- Item 1: Industrial Attachment (VUKnowledgebase) -->
                 <div class="mb-12 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
                     <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-primary/20 text-primary border border-primary/40 rounded-full text-xs font-semibold mb-2">June 2023 – Present (Final Year)</span>
-                        <h4 class="text-xl font-bold text-white">B.Sc. in Computer Science &amp; Engineering</h4>
-                        <p class="text-sm text-slate-400 font-medium">Undergraduate Degree Program</p>
+                        <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/40 rounded-full text-xs font-semibold mb-2">2026 &bull; 33rd Batch</span>
+                        <h4 class="text-xl font-bold text-white font-heading">Industrial Attachment — AI &amp; Semantic Search</h4>
+                        <p class="text-sm text-slate-400 font-medium">VUKnowledgebase Platform Development</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-primary/50 transition">
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                Completing core coursework in Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, and Software Engineering.
+                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-purple-500/50 transition">
+                            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                                Developed the VU Knowledgebase admin and ingestion pipeline for testing semantic search using Next.js 16, pgvector, and Google Gemini embeddings (<code class="text-sky-300 text-xs">gemini-embedding-001</code>). Automated asynchronous chunk extraction, resilient queue management, and vector similarity retrieval.
                             </p>
+                            <a href="https://github.com/ASTGD/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
+                               class="text-xs font-semibold text-purple-300 hover:text-white transition inline-flex items-center gap-1.5">
+                                <i class="fab fa-github"></i> View Attachment Repository &rarr;
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -813,43 +826,47 @@
                 <div class="mb-12 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
                     <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0 order-1 md:order-2">
                         <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full text-xs font-semibold mb-2">April 2025 – Present</span>
-                        <h4 class="text-xl font-bold text-white">Founder &amp; Developer &mdash; Ezox Bypass</h4>
-                        <p class="text-sm text-slate-400 font-medium">Game Optimization Solutions &bull; Online Business</p>
+                        <h4 class="text-xl font-bold text-white font-heading">Founder &amp; Developer &mdash; Ezox Bypass</h4>
+                        <p class="text-sm text-slate-400 font-medium">Game Optimization Solutions &bull; Online Platform</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full order-2 md:order-1">
                         <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-emerald-500/50 transition">
                             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Founded and operate an online platform providing game optimization tools, performance utilities, and digital solutions. Built the supporting storefront, automated order notifications, and manage active customer support.
+                                Founded and operate an online platform providing gaming performance optimization utilities and software solutions. Engineered the supporting web storefront with Python, Flask, and PostgreSQL, automated order alerts via SMTP &amp; Telegram API, and manage user support across Discord and Telegram.
                             </p>
                             <div class="flex flex-wrap gap-3 text-xs font-semibold">
                                 <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/30 hover:bg-sky-500/25 transition">
-                                    <i class="fab fa-telegram-plane"></i> Telegram
+                                    <i class="fab fa-telegram-plane"></i> Telegram Channel
                                 </a>
                                 <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-500/25 transition">
-                                    <i class="fab fa-discord"></i> Discord
+                                    <i class="fab fa-discord"></i> Discord Community
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Item 3: Full-Stack E-Commerce Project -->
+
+                <!-- Item 3: Undergraduate Degree -->
                 <div class="mb-6 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
                     <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-secondary/20 text-purple-300 border border-secondary/40 rounded-full text-xs font-semibold mb-2">2026</span>
-                        <h4 class="text-xl font-bold text-white">Full-Stack E-Commerce Platform</h4>
-                        <p class="text-sm text-slate-400 font-medium">Python &bull; Flask &bull; PostgreSQL</p>
+                        <span class="inline-block px-3 py-1 bg-primary/20 text-primary border border-primary/40 rounded-full text-xs font-semibold mb-2">June 2023 – Expected May 2027</span>
+                        <h4 class="text-xl font-bold text-white font-heading">B.Sc. in Computer Science &amp; Engineering</h4>
+                        <p class="text-sm text-slate-400 font-medium">Varendra University, Rajshahi (Final Year)</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-secondary/50 transition">
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                Engineered a full-stack e-commerce web application with customer/admin roles, PostgreSQL persistence, order workflows, CSRF/XSS security hardening, and automated SMTP &amp; Telegram alerts.
+                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-primary/50 transition">
+                            <p class="text-slate-300 text-sm leading-relaxed mb-2">
+                                Cumulative CGPA: <strong>3.10+ / 4.00</strong> (through 6th Semester).
+                            </p>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                <strong>Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering.
                             </p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -858,18 +875,20 @@
     <section id="contact" class="py-24 bg-darker relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Contact <span class="gradient-text">Me</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
+                    <i class="fas fa-paper-plane"></i> Communication
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Get In <span class="gradient-text">Touch</span></h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Have an opportunity, project idea, or just want to connect? My inbox is always open.</p>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Interested in collaborating on software engineering, AI systems, or hiring? Let's connect.</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Info Cards -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-white font-heading">Let's Connect</h3>
                     <p class="text-slate-400 mb-8 leading-relaxed">
-                        I am currently seeking software engineering internships, junior developer roles, and open-source contributions. 
-                        Feel free to reach out directly via email, message form, or on my social profiles.
+                        I am currently open to full-stack developer roles, software engineering internships, and AI research opportunities. Reach out via email, LinkedIn, or phone.
                     </p>
                     
                     <div class="space-y-4 mb-8">
@@ -879,48 +898,9 @@
                                 <i class="fas fa-envelope text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
                                 <a href="mailto:mustarifalom10@gmail.com" class="text-base font-bold text-slate-100 hover:text-primary transition">
                                     mustarifalom10@gmail.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Phone Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone-alt text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Phone / WhatsApp</h4>
-                                <a href="tel:+8801780109125" class="text-base font-bold text-slate-100 hover:text-emerald-400 transition">
-                                    +880 1780-109125
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Location Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-secondary/20 text-purple-400 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Location</h4>
-                                <p class="text-base font-bold text-slate-100">
-                                    Bangladesh (Open to Remote Worldwide)
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- GitHub Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-slate-700/40 text-slate-200 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-github text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">GitHub Profile</h4>
-                                <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-slate-100 hover:text-primary transition">
-                                    github.com/ezoxkr-dev
                                 </a>
                             </div>
                         </div>
@@ -931,9 +911,35 @@
                                 <i class="fab fa-linkedin-in text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">LinkedIn Profile</h4>
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">LinkedIn Profile</h4>
                                 <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-slate-100 hover:text-blue-400 transition">
                                     linkedin.com/in/mustarif-alom
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Card -->
+                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
+                            <div class="w-12 h-12 rounded-full bg-slate-700/40 text-slate-200 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">GitHub Profile</h4>
+                                <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-slate-100 hover:text-primary transition">
+                                    github.com/ezoxkr-dev
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phone / WhatsApp</h4>
+                                <a href="tel:+8801780109125" class="text-base font-bold text-slate-100 hover:text-emerald-400 transition">
+                                    +880 1780-109125
                                 </a>
                             </div>
                         </div>
@@ -962,7 +968,7 @@
                 
                 <!-- Interactive Message Form -->
                 <div class="bg-cardDark p-8 sm:p-10 rounded-2xl border border-slate-700/60 shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-white">Send Me a Message</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-white font-heading">Send Me a Message</h3>
                     
                     <form id="contact-form" class="space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -979,12 +985,12 @@
                         </div>
                         <div>
                             <label for="subject" class="block mb-2 text-sm font-medium text-slate-300">Subject *</label>
-                            <input type="text" id="subject" required placeholder="Internship Opportunity / Project Inquiry"
+                            <input type="text" id="subject" required placeholder="Software Engineering Opportunity / Project Inquiry"
                                    class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none">
                         </div>
                         <div>
                             <label for="message" class="block mb-2 text-sm font-medium text-slate-300">Message *</label>
-                            <textarea id="message" rows="5" required placeholder="Hi Mustarif, I came across your portfolio and wanted to reach out regarding..."
+                            <textarea id="message" rows="5" required placeholder="Hi Mustarif, I reviewed your portfolio and would like to discuss..."
                                       class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none resize-none"></textarea>
                         </div>
                         <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-full btn-primary text-white font-semibold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
@@ -996,7 +1002,7 @@
                     <!-- Submission Feedback Modal/Alert -->
                     <div id="form-alert" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-sm flex items-center gap-3">
                         <i class="fas fa-check-circle text-lg flex-shrink-0"></i>
-                        <span>Opening your email client to send the message to mustarifalom10@gmail.com.</span>
+                        <span>Opening your email client to send the message to mustarifalom10@gmail.com...</span>
                     </div>
                 </div>
             </div>
@@ -1008,10 +1014,10 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div>
-                    <a href="#home" class="text-xl font-bold tracking-tight">
+                    <a href="#home" class="text-xl font-bold tracking-tight font-heading">
                         <span class="gradient-text">&lt;Mustarif /&gt;</span>
                     </a>
-                    <p class="text-slate-400 text-sm mt-1">&copy; <span id="current-year">2026</span> Mustarif Alom. All rights reserved.</p>
+                    <p class="text-slate-400 text-sm mt-1">&copy; <span id="current-year">2026</span> Mustarif Alom. Varendra University &bull; 33rd Batch.</p>
                 </div>
                 
                 <div class="flex space-x-4">
@@ -1138,26 +1144,6 @@
                 behavior: 'smooth'
             });
         });
-        
-        // Animate Skill Progress Bars using Intersection Observer
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const skillsSection = document.getElementById('skills');
-
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    skillBars.forEach(bar => {
-                        const targetWidth = bar.getAttribute('data-width');
-                        bar.style.width = targetWidth;
-                    });
-                    obs.unobserve(entry.target); // Animate once
-                }
-            });
-        }, { threshold: 0.25 });
-
-        if (skillsSection) {
-            observer.observe(skillsSection);
-        }
 
         // Contact Form Submission Handler
         const contactForm = document.getElementById('contact-form');
