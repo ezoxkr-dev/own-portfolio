@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mustarif Alom | Software Engineer & AI Systems</title>
+    <meta name="description" content="Portfolio of Mustarif Alom — Full-Stack Software Engineer & Final-Year CSE Undergraduate at Varendra University.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -15,18 +16,12 @@
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0ea5e9',    /* Sky 500 */
-                        primaryDark: '#0284c7',/* Sky 600 */
-                        secondary: '#8b5cf6',  /* Violet 500 */
-                        accent: '#38bdf8',     /* Sky 400 */
-                        dark: '#0a0f1d',       /* Deep Navy */
-                        darker: '#060913',     /* Deepest Dark */
-                        cardDark: '#111827',   /* Gray 900 */
-                        cardBorder: '#1f2937', /* Gray 800 */
+                        primary: '#2563eb',     /* Royal Blue 600 */
+                        primaryDark: '#1d4ed8', /* Royal Blue 700 */
+                        brandNavy: '#0f172a',   /* Slate 900 */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -39,44 +34,35 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0f1d;
-            color: #e2e8f0;
+            background-color: #f8fafc;
+            color: #334155;
             overflow-x: hidden;
         }
 
         h1, h2, h3, h4, .font-heading {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+
+        .card-shadow {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .gradient-border {
-            border-image: linear-gradient(135deg, #38bdf8, #8b5cf6) 1;
-        }
-        
-        /* Interactive Cards */
         .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease-in-out;
         }
-        
+
         .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 16px 32px -8px rgba(14, 165, 233, 0.2), 0 0 16px rgba(139, 92, 246, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.04);
+            border-color: #cbd5e1;
         }
-        
-        /* Nav link underline effect */
+
+        /* Nav link underline */
         .nav-link {
             position: relative;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -84,389 +70,216 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background: linear-gradient(90deg, #38bdf8, #8b5cf6);
-            transition: width 0.3s ease;
+            background-color: #2563eb;
+            transition: width 0.2s ease;
         }
-        
+
         .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
         }
-        
+
         .nav-link.active {
-            color: #38bdf8;
+            color: #2563eb;
+            font-weight: 600;
         }
-        
+
         /* Timeline styling */
-        .timeline-item::before {
+        .timeline-line::before {
             content: '';
             position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            left: -8px;
-            top: 24px;
-            background: linear-gradient(135deg, #38bdf8, #8b5cf6);
-            border: 3px solid #0a0f1d;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            background-color: #e2e8f0;
         }
-        
+
         @media (min-width: 768px) {
-            .timeline-item-center::before {
+            .timeline-line::before {
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
-        
-        /* Project Cards */
-        .project-card {
-            background: linear-gradient(160deg, #111827 0%, #0a0f1d 100%);
-            border: 1px solid rgba(55, 65, 81, 0.7);
-            transition: all 0.35s ease;
-        }
-        
-        .project-card:hover {
-            border-color: rgba(56, 189, 248, 0.5);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.25);
-        }
-        
-        /* Form inputs */
-        .contact-input {
-            background-color: #111827;
-            border: 1px solid #374151;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-input:focus {
-            border-color: #38bdf8;
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-            background-color: #0f172a;
-        }
-        
-        /* Primary button */
-        .btn-primary {
-            background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: inherit;
-            background: linear-gradient(135deg, #7c3aed 0%, #0284c7 100%);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .btn-primary:hover::before {
-            opacity: 1;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(14, 165, 233, 0.4);
-        }
-
-        .btn-secondary {
-            border: 1px solid rgba(56, 189, 248, 0.6);
-            color: #38bdf8;
-            background: rgba(14, 165, 233, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(14, 165, 233, 0.18);
-            border-color: #38bdf8;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
-        }
-        
-        /* Floating social icons */
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(14, 165, 233, 0.4);
-            color: #ffffff;
-        }
-        
-        /* Glow animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        
-        .floating {
-            animation: float 4.5s ease-in-out infinite;
-        }
-
-        /* Pulse glow */
-        @keyframes pulseGlow {
-            0%, 100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.6;
-                transform: scale(1.04);
-            }
-        }
-
-        .glow-aura {
-            animation: pulseGlow 4s ease-in-out infinite;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #060913;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #374151;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #38bdf8;
-        }
     </style>
 </head>
-<body class="bg-dark text-slate-200">
+<body class="bg-slate-50 text-slate-700 antialiased">
 
     <!-- ================= NAVBAR ================= -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-darker/90 backdrop-blur-md z-50 border-b border-slate-800/80 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-200/80 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight font-heading">
-                    <span class="gradient-text">&lt;Mustarif /&gt;</span>
+                <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight font-heading text-slate-900">
+                    Mustarif<span class="text-blue-600">.</span>
                 </a>
                 
                 <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
                     <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
-                    <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
-                    <a href="#skills" class="nav-link text-slate-300 hover:text-white">Skills &amp; AI</a>
-                    <a href="#experience" class="nav-link text-slate-300 hover:text-white">Experience</a>
-                    <a href="#contact" class="nav-link text-slate-300 hover:text-white">Contact</a>
-                    <a href="#contact" class="ml-4 px-5 py-2 rounded-full btn-primary text-white text-xs uppercase tracking-wider font-semibold shadow-md">
+                    <a href="#about" class="nav-link hover:text-slate-900">About</a>
+                    <a href="#projects" class="nav-link hover:text-slate-900">Projects</a>
+                    <a href="#skills" class="nav-link hover:text-slate-900">Skills</a>
+                    <a href="#experience" class="nav-link hover:text-slate-900">Experience</a>
+                    <a href="#contact" class="nav-link hover:text-slate-900">Contact</a>
+                    <a href="#contact" class="ml-4 px-5 py-2 rounded-full bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition shadow-sm">
                         Get In Touch
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-toggle" aria-label="Toggle menu" class="text-slate-300 hover:text-primary focus:outline-none p-2">
-                        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+                    <button id="menu-toggle" aria-label="Toggle menu" class="text-slate-700 hover:text-blue-600 focus:outline-none p-2">
+                        <i id="menu-icon" class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-800 space-y-3 pb-2 text-center">
-                <a href="#home" class="block py-2 nav-link active">Home</a>
-                <a href="#about" class="block py-2 nav-link text-slate-300">About</a>
-                <a href="#projects" class="block py-2 nav-link text-slate-300">Projects</a>
-                <a href="#skills" class="block py-2 nav-link text-slate-300">Skills &amp; AI</a>
-                <a href="#experience" class="block py-2 nav-link text-slate-300">Experience</a>
-                <a href="#contact" class="block py-2 nav-link text-slate-300">Contact</a>
-                <a href="#contact" class="inline-block mt-2 px-6 py-2 rounded-full btn-primary text-white font-semibold text-sm">Get In Touch</a>
+            <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-200 space-y-3 pb-3 text-center">
+                <a href="#home" class="block py-2 text-slate-700 font-medium">Home</a>
+                <a href="#about" class="block py-2 text-slate-700 font-medium">About</a>
+                <a href="#projects" class="block py-2 text-slate-700 font-medium">Projects</a>
+                <a href="#skills" class="block py-2 text-slate-700 font-medium">Skills</a>
+                <a href="#experience" class="block py-2 text-slate-700 font-medium">Experience</a>
+                <a href="#contact" class="block py-2 text-slate-700 font-medium">Contact</a>
+                <a href="#contact" class="inline-block mt-2 px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold text-xs">Get In Touch</a>
             </div>
         </div>
     </nav>
-    
+
     <!-- ================= HERO SECTION ================= -->
-    <section id="home" class="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
-        <!-- Background decorative ambient circles -->
-        <div class="absolute top-1/4 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-            <!-- Left Hero Content -->
-            <div class="md:w-1/2 text-center md:text-left">
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-xs font-medium text-slate-300 mb-6 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>Final-Year CSE &bull; Varendra University</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight font-heading">
-                    Hi, I'm <span class="gradient-text">Mustarif Alom</span>
-                </h1>
+    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
                 
-                <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-slate-300 flex items-center justify-center md:justify-start gap-2">
-                    <i class="fas fa-terminal text-primary"></i>
-                    <span>Full-Stack Engineer &amp; AI Systems Builder</span>
-                </h2>
-                
-                <p class="text-base sm:text-lg mb-8 text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                    Engineering reliable full-stack web applications and intelligent vector-driven search systems. Experienced with 
-                    <strong class="text-slate-200 font-semibold">Python, Flask, Next.js 16, pgvector &amp; Google Gemini Embeddings</strong>, alongside research in deep learning for biomedical signals.
-                </p>
-
-                <!-- Call to Action Buttons -->
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
-                    <a href="#projects" class="px-7 py-3 rounded-full btn-primary text-white font-medium shadow-lg inline-flex items-center gap-2">
-                        <span>View Projects</span>
-                        <i class="fas fa-arrow-down text-xs"></i>
-                    </a>
-                    <a href="#contact" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2">
-                        <span>Let's Talk</span>
-                        <i class="fas fa-envelope text-xs"></i>
-                    </a>
-                    <a href="#about" class="px-6 py-3 rounded-full bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium inline-flex items-center gap-2 transition text-sm">
-                        <i class="fas fa-user text-xs text-primary"></i>
-                        <span>About Me</span>
-                    </a>
-                </div>
-
-                <!-- Social Links -->
-                <div class="flex items-center justify-center md:justify-start mt-10 space-x-4">
-                    <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-primary" title="GitHub">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-blue-600" title="LinkedIn">
-                        <i class="fab fa-linkedin-in text-lg"></i>
-                    </a>
-                    <a href="tel:+8801780109125" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-emerald-600" title="Call Me">
-                        <i class="fas fa-phone text-base"></i>
-                    </a>
-                    <a href="mailto:mustarifalom10@gmail.com" 
-                       class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800/90 border border-slate-700/60 text-slate-300 hover:bg-purple-600" title="Email Me">
-                        <i class="fas fa-envelope text-lg"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Hero Illustration / Profile Photo -->
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                    <!-- Glowing gradient halo -->
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary blur-2xl opacity-40 glow-aura"></div>
-                    
-                    <!-- Avatar Card / Frame -->
-                    <div class="relative w-full h-full rounded-full p-2 bg-gradient-to-tr from-primary via-purple-500 to-secondary floating shadow-2xl">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-900 border-4 border-slate-900 flex items-center justify-center">
-                            <!-- Formal Portrait Avatar -->
-                            <img src="images/profile.jpg" 
-                                 alt="Mustarif Alom" 
-                                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
-                        </div>
+                <!-- Left Hero Content -->
+                <div class="md:w-3/5 text-center md:text-left">
+                    <!-- Clean Status Chip -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-700 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Final-Year CSE @ Varendra University &bull; Graduating May 2027</span>
                     </div>
 
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight font-heading">
+                        Hi, I'm <span class="text-blue-600">Mustarif Alom</span>
+                    </h1>
+                    
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-slate-700">
+                        Full-Stack Software Engineer &amp; AI Systems Builder
+                    </h2>
+                    
+                    <p class="text-base sm:text-lg mb-8 text-slate-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        I engineer reliable full-stack web applications, vector search pipelines, and practical software solutions. Experienced with <strong class="text-slate-900 font-semibold">Python, Flask, Next.js 16, PostgreSQL &amp; pgvector</strong>, alongside undergraduate thesis research in deep learning.
+                    </p>
 
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-3.5">
+                        <a href="#projects" class="px-7 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-sm inline-flex items-center gap-2 transition">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
+                           class="px-6 py-3 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-semibold text-sm shadow-sm inline-flex items-center gap-2 transition">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>Live Attachment Website &rarr;</span>
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-sm shadow-sm inline-flex items-center gap-2 transition">
+                            <span>Let's Talk</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Icons Row -->
+                    <div class="flex items-center justify-center md:justify-start mt-10 space-x-4">
+                        <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition shadow-sm" title="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition shadow-sm" title="LinkedIn">
+                            <i class="fab fa-linkedin-in text-base"></i>
+                        </a>
+                        <a href="mailto:mustarifalom10@gmail.com" 
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-rose-600 hover:text-white transition shadow-sm" title="Email">
+                            <i class="fas fa-envelope text-base"></i>
+                        </a>
+                        <a href="tel:+8801780109125" 
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-emerald-600 hover:text-white transition shadow-sm" title="Phone">
+                            <i class="fas fa-phone text-sm"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" class="py-24 bg-darker relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">About <span class="gradient-text">Me</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">A practical engineer building software with real utility, security, and intelligence.</p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-                <!-- Profile Showcase Box -->
-                <div class="lg:w-1/3 flex justify-center">
-                    <div class="relative w-72 h-80 sm:w-80 sm:h-96">
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-secondary blur-xl opacity-25"></div>
-                        <div class="relative w-full h-full rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800">
+
+                <!-- Right Profile Portrait -->
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
                             <img src="images/profile.jpg" 
                                  alt="Mustarif Alom" 
                                  class="w-full h-full object-cover object-top">
-                            <div class="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 right-4 text-center">
-                                <span class="inline-block px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs text-primary font-medium mb-1">
-                                    Software &amp; AI
-                                </span>
-                                <h3 class="text-base font-bold text-white">Mustarif Alom</h3>
-                                <p class="text-xs text-slate-400">Varendra University &bull; 33rd Batch</p>
-                            </div>
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="py-24 bg-slate-50 border-t border-slate-200/80">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">About Me</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Engineering software with real-world utility, robust backend architecture, and intelligence.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white p-8 sm:p-10 rounded-2xl border border-slate-200 card-shadow">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4 font-heading">
+                    Bridging Full-Stack Development with Applied AI
+                </h3>
+                <p class="text-slate-600 leading-relaxed mb-5 text-base">
+                    I am a final-year <strong>Computer Science &amp; Engineering undergraduate at Varendra University</strong> (Rajshahi, Bangladesh) graduating in May 2027. My technical foundation spans both full-stack software development and practical AI systems, focusing on clean code, database design, and real performance.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-8 text-base">
+                    For my <strong>Industrial Attachment (33rd Batch)</strong>, I engineered <strong>VU Knowledgebase</strong>—a document ingestion and semantic search platform using Next.js 16, PostgreSQL, <code class="text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded text-xs font-mono">pgvector</code>, and Google Gemini embeddings. Alongside academics, I founded and operate <strong>Ezox Bypass</strong> (an online game optimization platform) and am conducting thesis research on <strong>Interpretable CNN-Transformer deep learning models</strong> for EEG emotion recognition.
+                </p>
                 
-                <!-- About Info Details -->
-                <div class="lg:w-2/3">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-100 font-heading">
-                        Building Scalable Software with Modern AI Integration
-                    </h3>
-                    <p class="text-slate-300 leading-relaxed mb-5 text-base">
-                        I am a final-year <strong>Computer Science &amp; Engineering undergraduate at Varendra University</strong> (Rajshahi, Bangladesh) graduating in May 2027. My work bridges 
-                        <strong>full-stack web development</strong> with <strong>applied AI systems</strong>, focusing on clean software architecture, database design, and real-world performance.
-                    </p>
-                    <p class="text-slate-400 leading-relaxed mb-8 text-base">
-                        Recently, as part of my <strong>Industrial Attachment (33rd batch)</strong>, I built <strong>VU Knowledgebase</strong>—a semantic search and document ingestion system leveraging Next.js 16, PostgreSQL, <code class="text-sky-300 bg-slate-800 px-1.5 py-0.5 rounded text-xs">pgvector</code>, and Google Gemini embeddings. In parallel, I operate my online software venture (<strong>Ezox Bypass</strong>) and am conducting undergraduate research on <strong>Interpretable CNN-Transformer deep learning models</strong> for EEG emotion recognition.
-                    </p>
-                    
-                    <!-- Quick Info Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-university text-primary w-5"></i>
-                                <span class="text-slate-400">University:</span>
-                                <span class="text-slate-200 font-semibold">Varendra University, Rajshahi</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-graduation-cap text-primary w-5"></i>
-                                <span class="text-slate-400">Degree:</span>
-                                <span class="text-slate-200 font-semibold">B.Sc. in CSE (Final Year)</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-envelope text-primary w-5"></i>
-                                <span class="text-slate-400">Email:</span>
-                                <a href="mailto:mustarifalom10@gmail.com" class="text-slate-200 font-semibold hover:text-primary transition">mustarifalom10@gmail.com</a>
-                            </div>
+                <!-- Quick Info Details Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-100 text-sm">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-university text-blue-600 w-5"></i>
+                            <span class="text-slate-500">University:</span>
+                            <span class="text-slate-900 font-medium">Varendra University, Rajshahi</span>
                         </div>
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-phone-alt text-primary w-5"></i>
-                                <span class="text-slate-400">Phone:</span>
-                                <a href="tel:+8801780109125" class="text-slate-200 font-semibold hover:text-primary transition">+880 1780-109125</a>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-map-marker-alt text-primary w-5"></i>
-                                <span class="text-slate-400">Location:</span>
-                                <span class="text-slate-200 font-semibold">Rajshahi, Bangladesh</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-emerald-400 w-5"></i>
-                                <span class="text-slate-400">Status:</span>
-                                <span class="text-emerald-400 font-semibold">Open to Engineering Roles</span>
-                            </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-graduation-cap text-blue-600 w-5"></i>
+                            <span class="text-slate-500">Degree:</span>
+                            <span class="text-slate-900 font-medium">B.Sc. in CSE (Final Year, 33rd Batch)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-chart-line text-blue-600 w-5"></i>
+                            <span class="text-slate-500">CGPA:</span>
+                            <span class="text-slate-900 font-medium">3.10+ / 4.00 (through 6th Semester)</span>
                         </div>
                     </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="px-7 py-3 rounded-full btn-primary text-white font-medium inline-flex items-center gap-2 text-sm">
-                            <span>Explore Projects</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="#skills" class="px-7 py-3 rounded-full btn-secondary font-medium inline-flex items-center gap-2 text-sm">
-                            <span>Technical Stack</span>
-                            <i class="fas fa-layer-group text-xs"></i>
-                        </a>
+                    <div class="space-y-2.5">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-600 w-5"></i>
+                            <span class="text-slate-500">Email:</span>
+                            <a href="mailto:mustarifalom10@gmail.com" class="text-slate-900 font-medium hover:text-blue-600 transition">mustarifalom10@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-blue-600 w-5"></i>
+                            <span class="text-slate-500">Phone:</span>
+                            <a href="tel:+8801780109125" class="text-slate-900 font-medium hover:text-blue-600 transition">+880 1780-109125</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-blue-600 w-5"></i>
+                            <span class="text-slate-500">Location:</span>
+                            <span class="text-slate-900 font-medium">Rajshahi, Bangladesh</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -474,385 +287,305 @@
     </section>
 
     <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="py-24 bg-dark relative">
+    <section id="projects" class="py-24 bg-white border-t border-slate-200/80">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
-                    <i class="fas fa-code"></i> Engineering Showcase
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
+                    <i class="fas fa-folder-open"></i> Portfolio Showcase
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Featured <span class="gradient-text">Projects &amp; Live Systems</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">Real systems, vector search pipelines, and full-stack software backed by public repositories and live deployments.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Featured Projects</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Real systems, vector search pipelines, and web applications with live deployments.</p>
             </div>
             
-            <div class="max-w-7xl mx-auto space-y-10">
+            <!-- Standard 2x2 Clean Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-                <!-- FLAGSHIP SHOWCASE: VU Knowledgebase -->
-                <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-purple-950/40 rounded-3xl border border-purple-500/30 p-8 sm:p-10 shadow-2xl relative overflow-hidden group">
-                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                    <div class="relative z-10 flex flex-col lg:flex-row items-start justify-between gap-10">
-                        <!-- Left Details Column -->
-                        <div class="lg:w-3/5 flex flex-col justify-between">
-                            <div>
-                                <div class="flex flex-wrap items-center gap-2.5 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40 text-xs font-semibold inline-flex items-center gap-1.5">
-                                        <i class="fas fa-star text-amber-400"></i> Featured Flagship
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-semibold inline-flex items-center gap-1.5">
-                                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Live on Vercel
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30 text-xs font-semibold">
-                                        33rd Batch Industrial Attachment
-                                    </span>
-                                </div>
-
-                                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 font-heading tracking-tight">
-                                    VU Knowledgebase
-                                </h3>
-                                <p class="text-sm font-semibold text-purple-400 mb-4">
-                                    Autonomous Document Ingestion, 3072-d pgvector Semantic Search &amp; Grounded RAG Platform
-                                </p>
-
-                                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                                    An end-to-end knowledge base and semantic search engine engineered for Varendra University. Parses multi-format documents (PDF, DOCX, TXT), performs sentence-boundary sliding-window chunking, computes 3072-dimensional vector embeddings with Google Gemini (<code class="text-sky-300 text-xs bg-slate-800 px-1.5 py-0.5 rounded">gemini-embedding-001</code>), and indexes them into PostgreSQL with <code class="text-sky-300 text-xs bg-slate-800 px-1.5 py-0.5 rounded">pgvector</code>. Features citation-grounded RAG answers via <code class="text-sky-300 text-xs bg-slate-800 px-1.5 py-0.5 rounded">gemini-3.8-flash</code> in English and বাংলা, voice search via Groq Whisper (<code class="text-sky-300 text-xs bg-slate-800 px-1.5 py-0.5 rounded">whisper-large-v3</code>), and asynchronous queue resilience powered by Vercel Fluid Compute.
-                                </p>
-
-                                <!-- Tech Stack Chips -->
-                                <div class="flex flex-wrap gap-2 mb-8">
-                                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-medium border border-slate-700">Next.js 16</span>
-                                    <span class="px-3 py-1 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">PostgreSQL + pgvector</span>
-                                    <span class="px-3 py-1 bg-sky-500/15 text-sky-300 rounded-lg text-xs font-medium border border-sky-500/30">Gemini Embeddings (3072-d)</span>
-                                    <span class="px-3 py-1 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">Gemini 3.8-Flash RAG</span>
-                                    <span class="px-3 py-1 bg-emerald-500/15 text-emerald-300 rounded-lg text-xs font-medium border border-emerald-500/30">Groq Whisper STT</span>
-                                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-medium border border-slate-700">Vercel Deployment</span>
-                                </div>
-                            </div>
-
-                            <!-- Interactive CTAs -->
-                            <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800">
-                                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer"
-                                   class="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 via-primary to-sky-500 text-white text-xs sm:text-sm font-bold hover:opacity-95 transition shadow-xl inline-flex items-center gap-2">
-                                    <i class="fas fa-external-link-alt"></i> Visit Live Website
-                                </a>
-                                <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
-                                   class="px-6 py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs sm:text-sm font-semibold transition inline-flex items-center gap-2">
-                                    <i class="fab fa-github"></i> GitHub (ezoxkr-dev/VUKnowledgebase)
-                                </a>
-                                <button onclick="openArchitectureModal()" 
-                                        class="px-5 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs sm:text-sm font-medium transition inline-flex items-center gap-2 cursor-pointer">
-                                    <i class="fas fa-sitemap text-primary"></i> System Design
-                                </button>
-                            </div>
+                <!-- Project 1: VU Knowledgebase (Live Attachment Project) -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
+                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                             alt="VU Knowledgebase - Vector Search" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-blue-600">AI &amp; Semantic Search</span>
+                            <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live on Vercel
+                            </span>
                         </div>
-
-                        <!-- Right Live Preview Card -->
-                        <div class="lg:w-2/5 w-full bg-slate-950 rounded-2xl border border-slate-800 p-6 flex flex-col justify-between">
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800 text-xs">
-                                <span class="font-bold text-slate-300 flex items-center gap-2">
-                                    <i class="fas fa-globe text-emerald-400"></i> vu-knowledgebase.vercel.app
-                                </span>
-                                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
-                                    Online
-                                </span>
-                            </div>
-
-                            <!-- Interactive Feature Highlights -->
-                            <div class="space-y-3 text-xs">
-                                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                                    <div class="font-semibold text-slate-200 mb-0.5 flex items-center gap-2">
-                                        <i class="fas fa-search text-sky-400"></i> Vector Search Pipeline
-                                    </div>
-                                    <div class="text-slate-400 text-[11px]">
-                                        3072-dimensional embeddings via Google Gemini with sub-second cosine distance nearest neighbor search.
-                                    </div>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                                    <div class="font-semibold text-slate-200 mb-0.5 flex items-center gap-2">
-                                        <i class="fas fa-quote-left text-purple-400"></i> Grounded RAG with Citations
-                                    </div>
-                                    <div class="text-slate-400 text-[11px]">
-                                        Strict passage citations [1], [2] using Gemini 3.8-Flash with bilingual answers in English and Bangla.
-                                    </div>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                                    <div class="font-semibold text-slate-200 mb-0.5 flex items-center gap-2">
-                                        <i class="fas fa-microphone text-pink-400"></i> Multimodal Voice Queries
-                                    </div>
-                                    <div class="text-slate-400 text-[11px]">
-                                        Real-time browser microphone audio recording transcribed instantly via Groq Whisper API.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                                <span class="text-slate-400">Ready to test?</span>
-                                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer"
-                                   class="text-primary hover:underline font-semibold inline-flex items-center gap-1.5">
-                                    Launch Demo &rarr;
-                                </a>
-                            </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
+                            VU Knowledgebase
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 mb-3">
+                            Autonomous Document Ingestion &amp; Vector Search Platform
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            An intelligent document ingestion and semantic search engine engineered for Varendra University (33rd batch Industrial Attachment). Ingests PDF and DOCX files, generates 3072-dimensional vector embeddings with Google Gemini, and performs sub-second similarity retrieval with PostgreSQL <code class="text-blue-700 bg-blue-50 px-1 py-0.5 rounded text-xs">pgvector</code>. Provides citation-grounded RAG answers in English and বাংলা via Gemini 3.8-Flash alongside real-time voice search with Groq Whisper.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Next.js 16</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">pgvector</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Gemini Embeddings</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Gemini 3.8-Flash</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Whisper STT</span>
+                        </div>
+                        
+                        <!-- Clickable Links: Live Website & Repo -->
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 gap-3">
+                            <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
+                               class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition shadow-sm">
+                                <i class="fas fa-external-link-alt text-[10px]"></i> Visit Live Website
+                            </a>
+                            <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer" 
+                               class="text-xs font-semibold text-slate-600 hover:text-blue-600 transition inline-flex items-center gap-1.5">
+                                <i class="fab fa-github text-sm"></i> ezoxkr-dev/VUKnowledgebase
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3 SUPPORTING ENGINEERING PROJECTS -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Project 2: Ezox Bypass Platform -->
-                    <div class="project-card rounded-2xl overflow-hidden flex flex-col group bg-cardDark border border-slate-800">
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Ezox Bypass - Gaming Platform" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                                <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer"
-                                   class="px-4 py-2 rounded-full bg-sky-500 text-white text-xs font-semibold hover:bg-sky-600 transition shadow-lg inline-flex items-center gap-1.5">
-                                    <i class="fab fa-telegram-plane"></i> Telegram
-                                </a>
-                                <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer"
-                                   class="px-4 py-2 rounded-full bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition shadow-lg inline-flex items-center gap-1.5">
-                                    <i class="fab fa-discord"></i> Discord
-                                </a>
-                            </div>
+                <!-- Project 2: Full-Stack E-Commerce Platform -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
+                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Full-Stack E-Commerce Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-blue-600">FULL-STACK WEB APP</span>
+                            <span class="text-xs bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-0.5 rounded-full font-semibold">
+                                Production Backend
+                            </span>
                         </div>
-                        <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs uppercase font-bold tracking-wider text-emerald-400">Live Software Venture</span>
-                                <span class="text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-medium">Active Business</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
-                                Ezox Bypass Web &amp; Bot Platform
-                            </h3>
-                            <p class="text-xs font-medium text-slate-400 mb-3">
-                                Game Optimization Solutions &bull; Distributed Infrastructure
-                            </p>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
-                                Founded and operate an active online business delivering gaming software utilities and system optimization tools. Engineered the full-stack web storefront with Python, Flask, and PostgreSQL. Automated customer order fulfillment and transaction alerts via SMTP and Telegram Bot API, actively supporting users across Discord and Telegram.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Python</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Flask</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">PostgreSQL</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Telegram Bot API</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Discord API</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">SMTP Automation</span>
-                            </div>
-                            
-                            <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                                <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer" 
-                                   class="text-sm font-semibold text-primary hover:text-white transition inline-flex items-center gap-1.5">
-                                    <i class="fab fa-telegram-plane text-sky-400"></i> t.me/ezoxbypass
-                                </a>
-                                <span class="text-xs font-medium text-slate-400">
-                                    <i class="fas fa-check-circle text-emerald-400"></i> Live Platform
-                                </span>
-                            </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
+                            Full-Stack E-Commerce Platform
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 mb-3">
+                            Python, Flask &amp; PostgreSQL Enterprise Store
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            A complete digital storefront engineered with Python and Flask. Implements role-based authentication (customer and admin), secure token-based password reset, shopping cart checkout, order tracking, and an admin management portal. Features strict security hardening with CSRF protection, bleach sanitization, CSP/HSTS, and automated SMTP/Telegram alerts.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Flask</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Tailwind CSS</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Security Hardening</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 gap-3">
+                            <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer" 
+                               class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition shadow-sm">
+                                <i class="fab fa-github"></i> Open Repository
+                            </a>
+                            <span class="text-xs font-medium text-slate-500">
+                                <i class="fas fa-shield-alt text-blue-600"></i> Hardened Store
+                            </span>
                         </div>
                     </div>
-
-                    <!-- Project 3: Full-Stack E-Commerce Platform -->
-                    <div class="project-card rounded-2xl overflow-hidden flex flex-col group bg-cardDark border border-slate-800">
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Full-Stack E-Commerce Platform" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer"
-                                   class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primaryDark transition shadow-lg inline-flex items-center gap-2">
-                                    <i class="fab fa-github"></i> Open Repository
-                                </a>
-                            </div>
-                        </div>
-                        <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs uppercase font-bold tracking-wider text-sky-400">Full-Stack Web App</span>
-                                <span class="text-xs bg-sky-500/10 text-sky-300 border border-sky-500/30 px-2.5 py-0.5 rounded-full font-medium">Production Backend</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
-                                Full-Stack E-Commerce Platform
-                            </h3>
-                            <p class="text-xs font-medium text-slate-400 mb-3">
-                                Python, Flask &amp; PostgreSQL Enterprise Store
-                            </p>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
-                                A complete digital storefront engineered with Python and Flask. Implements role-based authentication (customer and admin), secure token-based password reset, shopping cart checkout, order tracking, and an admin management portal. Features strict security hardening with CSRF protection, bleach sanitization, CSP/HSTS, and automated SMTP/Telegram alerts.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Python</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Flask</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">PostgreSQL</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Tailwind CSS</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">JavaScript</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Security Hardening</span>
-                            </div>
-                            
-                            <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                                <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer" 
-                                   class="text-sm font-semibold text-primary hover:text-white transition inline-flex items-center gap-2">
-                                    <i class="fab fa-github"></i> ezoxkr-dev/ecommerce_website
-                                </a>
-                                <span class="text-xs font-medium text-slate-400">
-                                    <i class="fas fa-shield-alt text-sky-400"></i> Hardened
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: Interpretable CNN-Transformer EEG Thesis -->
-                    <div class="project-card rounded-2xl overflow-hidden flex flex-col group bg-cardDark border border-slate-800">
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80" 
-                                 alt="EEG Emotion Recognition" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-darker/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span class="px-4 py-2 rounded-full bg-secondary text-white text-xs font-semibold shadow-lg inline-flex items-center gap-2">
-                                    <i class="fas fa-microscope"></i> Final-Year Research
-                                </span>
-                            </div>
-                        </div>
-                        <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs uppercase font-bold tracking-wider text-pink-400">Deep Learning &bull; Thesis</span>
-                                <span class="text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30 px-2.5 py-0.5 rounded-full font-medium">Undergraduate Thesis</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors font-heading">
-                                Interpretable CNN-Transformer
-                            </h3>
-                            <p class="text-xs font-medium text-slate-400 mb-3">
-                                Cross-Dataset EEG Emotion Recognition
-                            </p>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-5 flex-grow">
-                                Final-year research investigating a hybrid Convolutional Neural Network (CNN) and Transformer architecture for affective classification from brainwave signals across heterogeneous datasets. Focuses on learning spatial-temporal representations while providing interpretability into neurological signal features across diverse subject cohorts.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Python</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Deep Learning</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Transformers</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">CNNs</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">EEG Processing</span>
-                                <span class="px-2.5 py-1 bg-slate-800 text-slate-300 rounded-md text-xs font-medium border border-slate-700">Interpretability</span>
-                            </div>
-                            
-                            <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                                <span class="text-sm font-semibold text-slate-300 inline-flex items-center gap-2">
-                                    <i class="fas fa-graduation-cap text-pink-400"></i> Varendra University
-                                </span>
-                                <span class="text-xs font-medium text-amber-400">
-                                    <i class="fas fa-spinner fa-spin text-xs mr-1"></i> In Progress
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Project 3: Ezox Bypass Platform -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
+                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" 
+                             alt="Ezox Bypass - Gaming Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-emerald-600">LIVE SOFTWARE VENTURE</span>
+                            <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full font-semibold">
+                                Active Business
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
+                            Ezox Bypass Web &amp; Bot Platform
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 mb-3">
+                            Game Optimization Solutions &bull; Distributed Infrastructure
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Founded and operate an active online business delivering gaming software utilities and system optimization tools. Engineered the full-stack web storefront with Python, Flask, and PostgreSQL. Automated customer order fulfillment and transaction alerts via SMTP and Telegram Bot API, actively supporting users across Discord and Telegram.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Flask</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Telegram Bot API</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Discord API</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-start gap-3 pt-4 border-t border-slate-100">
+                            <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer" 
+                               class="px-4 py-2 rounded-lg bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fab fa-telegram-plane"></i> Telegram Channel
+                            </a>
+                            <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer" 
+                               class="px-4 py-2 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fab fa-discord"></i> Discord Community
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Interpretable CNN-Transformer EEG Thesis -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
+                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80" 
+                             alt="EEG Emotion Recognition" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs uppercase font-bold tracking-wider text-purple-600">DEEP LEARNING</span>
+                            <span class="text-xs bg-purple-50 text-purple-700 border border-purple-200 px-2.5 py-0.5 rounded-full font-semibold">
+                                Undergraduate Thesis
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
+                            Interpretable CNN-Transformer
+                        </h3>
+                        <p class="text-xs font-medium text-slate-500 mb-3">
+                            Cross-Dataset EEG Emotion Recognition
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Final-year research investigating a hybrid Convolutional Neural Network (CNN) and Transformer architecture for affective classification from brainwave signals across heterogeneous datasets. Focuses on learning spatial-temporal representations while providing interpretability into neurological signal features across diverse subject cohorts.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Deep Learning</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Transformers</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">CNNs</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Signal Processing</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs font-semibold text-slate-600">
+                                <i class="fas fa-graduation-cap text-purple-600 mr-1"></i> Varendra University
+                            </span>
+                            <span class="text-xs font-medium text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
+                                In Progress
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ================= SKILLS & AI SECTION ================= -->
-    <section id="skills" class="py-24 bg-darker relative">
+    <!-- ================= SKILLS SECTION ================= -->
+    <section id="skills" class="py-24 bg-slate-50 border-t border-slate-200/80">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-xs font-semibold text-secondary mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/80 text-xs font-semibold text-slate-700 mb-3">
                     <i class="fas fa-layer-group"></i> Technical Competencies
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Skills &amp; <span class="gradient-text">Technologies</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Technologies, tools, and computer science fundamentals applied across real projects.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Skills &amp; Technologies</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Technologies, tools, and computer science fundamentals applied across real projects.</p>
             </div>
             
+            <!-- Clean 2x2 Professional Cards (No Clutter) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <!-- Card 1: Programming Languages & Core CS -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Card 1: Languages & Core CS -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-5">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-heading">Languages &amp; Core CS</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Firm command of programming languages and fundamental computer science principles from academic study and practical systems.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Programming Languages &amp; Core CS</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Firm command of academic computing fundamentals and programming languages from coursework and production software.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Python</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">C &amp; C++</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Java</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">JavaScript (ES6+)</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">TypeScript</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">SQL</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Data Structures &amp; Algorithms</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">OOP</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Python</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">C &amp; C++</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Java</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">JavaScript (ES6+)</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">TypeScript</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">SQL</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Data Structures &amp; Algorithms</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Object-Oriented Design</span>
                     </div>
                 </div>
 
-                <!-- Card 2: AI, Vector Systems & Deep Learning -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Card 2: AI, Vector Search & Research -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-5">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-heading">AI &amp; Vector Systems</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Building production vector search and retrieval-augmented generation pipelines, alongside deep learning research.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">AI, Vector Systems &amp; Research</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Hands-on experience engineering vector search pipelines, citation RAG answering, and deep learning neural architectures.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">PostgreSQL pgvector</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">Gemini Embeddings (3072-d)</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">Gemini 3.8-Flash RAG</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">Groq Whisper STT</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">CNN-Transformers</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">PyTorch</span>
-                        <span class="px-3 py-1.5 bg-purple-500/15 text-purple-300 rounded-lg text-xs font-medium border border-purple-500/30">Semantic Search</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">PostgreSQL pgvector</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Gemini Embeddings (3072-d)</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Gemini 3.8-Flash RAG</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Groq Whisper STT</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">CNN-Transformers</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">PyTorch</span>
+                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Semantic Search</span>
                     </div>
                 </div>
 
-                <!-- Card 3: Full-Stack & Web Frameworks -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Card 3: Web & Backend Frameworks -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-5">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-heading">Full-Stack &amp; Web Frameworks</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Engineering secure web applications, REST APIs, and responsive frontends with modern reactive tooling.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Web &amp; Backend Frameworks</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Building production backend services, server-rendered views, responsive interfaces, and REST APIs.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Next.js 16 (App Router)</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Python Flask</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">React 19</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Node.js</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Tailwind CSS</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">RESTful APIs</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Authentication &amp; JWT</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Next.js 16 (App Router)</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Python Flask</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">React 19</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Node.js</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">RESTful APIs</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Session &amp; JWT Auth</span>
                     </div>
                 </div>
 
-                <!-- Card 4: Databases, Cloud & DevOps -->
-                <div class="bg-cardDark p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Card 4: Databases, Cloud & Tools -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-5">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-heading">Databases &amp; Cloud Tools</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Relational database schema design, indexing, version control, and production serverless deployment.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Databases &amp; Developer Tools</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Relational schema design, version control, API testing, and production deployment environments.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">PostgreSQL</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">SQLite</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Vercel</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Git &amp; GitHub</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Cloudflare Turnstile</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">Postman</span>
-                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 rounded-lg text-xs font-medium border border-slate-700">VS Code</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">PostgreSQL</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">SQLite</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Vercel</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Git &amp; GitHub</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Postman</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Cloudflare Turnstile</span>
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">VS Code</span>
                     </div>
                 </div>
 
@@ -861,61 +594,66 @@
     </section>
 
     <!-- ================= EXPERIENCE & EDUCATION TIMELINE ================= -->
-    <section id="experience" class="py-24 bg-dark relative">
+    <section id="experience" class="py-24 bg-white border-t border-slate-200/80">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
-                    <i class="fas fa-briefcase"></i> Background &amp; Milestones
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
+                    <i class="fas fa-briefcase"></i> Timeline
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Education &amp; <span class="gradient-text">Experience</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">My academic timeline, industrial attachment project, and active software business.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Experience &amp; Education</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">My academic milestones, industrial attachment project, and active software business.</p>
             </div>
             
-            <div class="relative max-w-3xl mx-auto pl-6 md:pl-0">
-                <!-- Center vertical line for desktop, left for mobile -->
-                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 transform md:-translate-x-1/2"></div>
+            <div class="relative max-w-3xl mx-auto pl-6 md:pl-0 timeline-line">
                 
                 <!-- Item 1: Industrial Attachment (VUKnowledgebase) -->
-                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/40 rounded-full text-xs font-semibold mb-2">2026 &bull; 33rd Batch</span>
-                        <h4 class="text-xl font-bold text-white font-heading">Industrial Attachment — AI &amp; Semantic Search</h4>
-                        <p class="text-sm text-slate-400 font-medium">VUKnowledgebase Platform Development</p>
+                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0">
+                        <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs font-semibold mb-2">2026 &bull; 33rd Batch</span>
+                        <h4 class="text-xl font-bold text-slate-900 font-heading">Industrial Attachment — AI &amp; Semantic Search</h4>
+                        <p class="text-sm text-slate-500 font-medium">VU Knowledgebase Platform Development</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-purple-500/50 transition">
-                            <p class="text-slate-300 text-sm leading-relaxed mb-3">
-                                Developed the VU Knowledgebase admin and ingestion pipeline for testing semantic search using Next.js 16, pgvector, and Google Gemini embeddings (<code class="text-sky-300 text-xs">gemini-embedding-001</code>). Automated asynchronous chunk extraction, resilient queue management, and vector similarity retrieval.
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
+                            <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                                Developed the VU Knowledgebase admin and document ingestion pipeline using Next.js 16, PostgreSQL + pgvector, and Google Gemini embeddings. Implemented sliding-window text chunking, citation-grounded RAG answers, and voice queries via Groq Whisper.
                             </p>
-                            <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
-                               class="text-xs font-semibold text-purple-300 hover:text-white transition inline-flex items-center gap-1.5">
-                                <i class="fab fa-github"></i> View Attachment Repository &rarr;
-                            </a>
+                            <div class="flex items-center gap-3 text-xs font-semibold">
+                                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer"
+                                   class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                    <i class="fas fa-external-link-alt text-[10px]"></i> Live Website
+                                </a>
+                                <span class="text-slate-300">|</span>
+                                <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
+                                   class="text-slate-600 hover:text-slate-900 inline-flex items-center gap-1">
+                                    <i class="fab fa-github"></i> Repository &rarr;
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Item 2: Online Business - Ezox Bypass -->
-                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0 order-1 md:order-2">
-                        <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full text-xs font-semibold mb-2">April 2025 – Present</span>
-                        <h4 class="text-xl font-bold text-white font-heading">Founder &amp; Developer &mdash; Ezox Bypass</h4>
-                        <p class="text-sm text-slate-400 font-medium">Game Optimization Solutions &bull; Online Platform</p>
+                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0 order-1 md:order-2">
+                        <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-semibold mb-2">April 2025 – Present</span>
+                        <h4 class="text-xl font-bold text-slate-900 font-heading">Founder &amp; Developer &mdash; Ezox Bypass</h4>
+                        <p class="text-sm text-slate-500 font-medium">Game Optimization Solutions &bull; Online Platform</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full order-2 md:order-1">
-                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-emerald-500/50 transition">
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Founded and operate an online platform providing gaming performance optimization utilities and software solutions. Engineered the supporting web storefront with Python, Flask, and PostgreSQL, automated order alerts via SMTP &amp; Telegram API, and manage user support across Discord and Telegram.
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Founded and operate an active online business delivering gaming performance optimization utilities and software solutions. Engineered the supporting web storefront with Python, Flask, and PostgreSQL, automated order alerts via SMTP &amp; Telegram API, and manage user support across Discord and Telegram.
                             </p>
-                            <div class="flex flex-wrap gap-3 text-xs font-semibold">
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold">
                                 <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/30 hover:bg-sky-500/25 transition">
-                                    <i class="fab fa-telegram-plane"></i> Telegram Channel
+                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 transition">
+                                    <i class="fab fa-telegram-plane"></i> Telegram
                                 </a>
                                 <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-500/25 transition">
-                                    <i class="fab fa-discord"></i> Discord Community
+                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition">
+                                    <i class="fab fa-discord"></i> Discord
                                 </a>
                             </div>
                         </div>
@@ -923,18 +661,18 @@
                 </div>
 
                 <!-- Item 3: Undergraduate Degree -->
-                <div class="mb-6 relative flex flex-col md:flex-row items-center w-full timeline-item md:timeline-item-center">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-4 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-primary/20 text-primary border border-primary/40 rounded-full text-xs font-semibold mb-2">June 2023 – Expected May 2027</span>
-                        <h4 class="text-xl font-bold text-white font-heading">B.Sc. in Computer Science &amp; Engineering</h4>
-                        <p class="text-sm text-slate-400 font-medium">Varendra University, Rajshahi (Final Year)</p>
+                <div class="mb-6 relative flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded-full text-xs font-semibold mb-2">June 2023 – Expected May 2027</span>
+                        <h4 class="text-xl font-bold text-slate-900 font-heading">B.Sc. in Computer Science &amp; Engineering</h4>
+                        <p class="text-sm text-slate-500 font-medium">Varendra University, Rajshahi (Final Year)</p>
                     </div>
                     <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-800/90 border border-slate-700/60 rounded-xl shadow-lg hover:border-primary/50 transition">
-                            <p class="text-slate-300 text-sm leading-relaxed mb-2">
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
+                            <p class="text-slate-700 text-sm leading-relaxed mb-2">
                                 Cumulative CGPA: <strong>3.10+ / 4.00</strong> (through 6th Semester).
                             </p>
-                            <p class="text-slate-400 text-xs leading-relaxed">
+                            <p class="text-slate-500 text-xs leading-relaxed">
                                 <strong>Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering.
                             </p>
                         </div>
@@ -946,136 +684,113 @@
     </section>
 
     <!-- ================= CONTACT SECTION ================= -->
-    <section id="contact" class="py-24 bg-darker relative">
+    <section id="contact" class="py-24 bg-slate-50 border-t border-slate-200/80">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
                     <i class="fas fa-paper-plane"></i> Communication
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 font-heading">Get In <span class="gradient-text">Touch</span></h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">Interested in collaborating on software engineering, AI systems, or hiring? Let's connect.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Get In Touch</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Interested in collaborating on software engineering, AI systems, or hiring? Let's connect.</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <!-- Contact Info Cards -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-white font-heading">Let's Connect</h3>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        I am currently open to full-stack developer roles, software engineering internships, and AI research opportunities. Reach out via email, LinkedIn, or phone.
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900 font-heading">Let's Connect</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed text-sm">
+                        I am currently open to full-stack developer roles, software engineering internships, and AI research opportunities. Reach out via email, phone, or LinkedIn.
                     </p>
                     
-                    <div class="space-y-4 mb-8">
+                    <div class="space-y-3.5 mb-8">
                         <!-- Email Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-lg"></i>
+                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
+                            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-base"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
-                                <a href="mailto:mustarifalom10@gmail.com" class="text-base font-bold text-slate-100 hover:text-primary transition">
+                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
+                                <a href="mailto:mustarifalom10@gmail.com" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
                                     mustarifalom10@gmail.com
                                 </a>
                             </div>
                         </div>
 
                         <!-- LinkedIn Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-linkedin-in text-lg"></i>
+                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
+                            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-linkedin-in text-base"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">LinkedIn Profile</h4>
-                                <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-slate-100 hover:text-blue-400 transition">
+                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">LinkedIn Profile</h4>
+                                <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
                                     linkedin.com/in/mustarif-alom
                                 </a>
                             </div>
                         </div>
 
                         <!-- GitHub Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-slate-700/40 text-slate-200 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-github text-xl"></i>
+                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
+                            <div class="w-11 h-11 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-github text-base"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">GitHub Profile</h4>
-                                <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-slate-100 hover:text-primary transition">
+                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">GitHub Profile</h4>
+                                <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
                                     github.com/ezoxkr-dev
                                 </a>
                             </div>
                         </div>
 
                         <!-- Phone Card -->
-                        <div class="flex items-start gap-4 p-5 bg-slate-900 border border-slate-800 rounded-xl card-hover">
-                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone-alt text-lg"></i>
+                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
+                            <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-base"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phone / WhatsApp</h4>
-                                <a href="tel:+8801780109125" class="text-base font-bold text-slate-100 hover:text-emerald-400 transition">
+                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Phone / WhatsApp</h4>
+                                <a href="tel:+8801780109125" class="text-sm font-semibold text-slate-900 hover:text-emerald-600 transition">
                                     +880 1780-109125
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Social Icons Row -->
-                    <div class="flex items-center gap-4">
-                        <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                           class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-primary" title="GitHub">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                           class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600" title="LinkedIn">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                        <a href="tel:+8801780109125" 
-                           class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-emerald-600" title="Call Me">
-                            <i class="fas fa-phone text-base"></i>
-                        </a>
-                        <a href="mailto:mustarifalom10@gmail.com" 
-                           class="social-icon w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-purple-600" title="Email Me">
-                            <i class="fas fa-paper-plane text-base"></i>
-                        </a>
-                    </div>
                 </div>
                 
-                <!-- Interactive Message Form -->
-                <div class="bg-cardDark p-8 sm:p-10 rounded-2xl border border-slate-700/60 shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-white font-heading">Send Me a Message</h3>
+                <!-- Contact Message Form -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-900 font-heading">Send a Message</h3>
                     
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block mb-2 text-sm font-medium text-slate-300">Your Name *</label>
-                                <input type="text" id="name" required placeholder="Alex Smith"
-                                       class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none">
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-slate-300">Your Email *</label>
-                                <input type="email" id="email" required placeholder="alex@example.com"
-                                       class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none">
-                            </div>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1 text-xs font-semibold text-slate-700">Your Name *</label>
+                            <input type="text" id="name" required placeholder="Alex Smith"
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
                         <div>
-                            <label for="subject" class="block mb-2 text-sm font-medium text-slate-300">Subject *</label>
-                            <input type="text" id="subject" required placeholder="Software Engineering Opportunity / Project Inquiry"
-                                   class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none">
+                            <label for="email" class="block mb-1 text-xs font-semibold text-slate-700">Your Email *</label>
+                            <input type="email" id="email" required placeholder="alex@example.com"
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
                         <div>
-                            <label for="message" class="block mb-2 text-sm font-medium text-slate-300">Message *</label>
-                            <textarea id="message" rows="5" required placeholder="Hi Mustarif, I reviewed your portfolio and would like to discuss..."
-                                      class="w-full px-4 py-3 rounded-xl contact-input text-slate-100 placeholder-slate-500 text-sm focus:outline-none resize-none"></textarea>
+                            <label for="subject" class="block mb-1 text-xs font-semibold text-slate-700">Subject *</label>
+                            <input type="text" id="subject" required placeholder="Software Engineering Opportunity"
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
-                        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-full btn-primary text-white font-semibold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
+                        <div>
+                            <label for="message" class="block mb-1 text-xs font-semibold text-slate-700">Message *</label>
+                            <textarea id="message" rows="4" required placeholder="Hi Mustarif, I reviewed your projects and would like to discuss..."
+                                      class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition shadow-sm flex items-center justify-center gap-2">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane text-xs"></i>
                         </button>
                     </form>
 
-                    <!-- Submission Feedback Modal/Alert -->
-                    <div id="form-alert" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-sm flex items-center gap-3">
-                        <i class="fas fa-check-circle text-lg flex-shrink-0"></i>
+                    <div id="form-alert" class="hidden mt-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2.5">
+                        <i class="fas fa-check-circle text-emerald-600"></i>
                         <span>Opening your email client to send the message to mustarifalom10@gmail.com...</span>
                     </div>
                 </div>
@@ -1084,31 +799,27 @@
     </section>
     
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-darker py-12 border-t border-slate-800">
+    <footer class="bg-white py-10 border-t border-slate-200">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div>
-                    <a href="#home" class="text-xl font-bold tracking-tight font-heading">
-                        <span class="gradient-text">&lt;Mustarif /&gt;</span>
+                    <a href="#home" class="text-lg font-bold tracking-tight font-heading text-slate-900">
+                        Mustarif<span class="text-blue-600">.</span>
                     </a>
-                    <p class="text-slate-400 text-sm mt-1">&copy; <span id="current-year">2026</span> Mustarif Alom. Varendra University &bull; 33rd Batch.</p>
+                    <p class="text-slate-500 text-xs mt-0.5">&copy; <span id="current-year">2026</span> Mustarif Alom. Varendra University &bull; 33rd Batch.</p>
                 </div>
                 
-                <div class="flex space-x-4">
+                <div class="flex space-x-3 text-slate-500 text-sm">
                     <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-primary" title="GitHub">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                       class="social-icon w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600" title="LinkedIn">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition" title="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="tel:+8801780109125" 
-                       class="social-icon w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-emerald-600" title="Phone">
-                        <i class="fas fa-phone"></i>
-                    </a>
                     <a href="mailto:mustarifalom10@gmail.com" 
-                       class="social-icon w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-purple-600" title="Email">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-rose-600 hover:text-white transition" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -1116,18 +827,11 @@
         </div>
     </footer>
     
-    <!-- ================= BACK TO TOP BUTTON ================= -->
-    <button id="back-to-top" aria-label="Back to top" 
-            class="fixed bottom-8 right-8 w-12 h-12 btn-primary rounded-full flex items-center justify-center text-white shadow-xl transition-all duration-300 z-50 opacity-0 pointer-events-none hover:scale-110">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
     <!-- ================= JAVASCRIPT ================= -->
     <script>
-        // Set dynamic current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -1144,89 +848,33 @@
             }
         });
         
-        // Smooth scrolling for navigation anchors
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#' || !targetId) return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    const navHeight = document.getElementById('navbar').offsetHeight;
-                    window.scrollTo({
-                        top: targetElement.offsetTop - navHeight + 5,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile dropdown if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        menuIcon.classList.remove('fa-times');
-                        menuIcon.classList.add('fa-bars');
-                    }
-                }
-            });
-        });
-        
-        // Active Nav Link on Scroll & Back-to-Top Button
+        // Active Nav Link on Scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
-        const backToTopBtn = document.getElementById('back-to-top');
-        const navbar = document.getElementById('navbar');
         
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY + 120;
-            
-            // Navbar background elevation
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-xl', 'bg-darker/95');
-            } else {
-                navbar.classList.remove('shadow-xl');
-            }
-
-            // Highlight current section link
             sections.forEach(section => {
                 const top = section.offsetTop;
                 const height = section.offsetHeight;
                 const id = section.getAttribute('id');
-                
                 if (scrollPos >= top && scrollPos < top + height) {
                     navLinks.forEach(link => {
-                        link.classList.remove('active', 'text-sky-400');
+                        link.classList.remove('active', 'text-blue-600');
                         if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active', 'text-sky-400');
+                            link.classList.add('active', 'text-blue-600');
                         }
                     });
                 }
             });
-            
-            // Show/hide back to top button
-            if (window.scrollY > 350) {
-                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
-            }
-        });
-        
-        // Scroll to top on click
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         });
 
-        // Contact Form Submission Handler
+        // Contact form mailto handler
         const contactForm = document.getElementById('contact-form');
         const formAlert = document.getElementById('form-alert');
-        const submitBtn = document.getElementById('submit-btn');
 
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
             const senderName = document.getElementById('name').value.trim();
             const senderEmail = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
@@ -1242,298 +890,6 @@
                 formAlert.classList.add('hidden');
             }, 6000);
         });
-
-        // Architecture Deep Dive Modal Logic
-        const archModal = document.getElementById('architecture-modal');
-        function openArchitectureModal() {
-            if (!archModal) return;
-            archModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeArchitectureModal() {
-            if (!archModal) return;
-            archModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        // Close modal on backdrop click
-        if (archModal) {
-            archModal.addEventListener('click', (e) => {
-                if (e.target === archModal) {
-                    closeArchitectureModal();
-                }
-            });
-        }
-        // Close modal on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && archModal && !archModal.classList.contains('hidden')) {
-                closeArchitectureModal();
-            }
-        });
-
-        // Tab switcher inside modal
-        function switchArchTab(index) {
-            const tabs = document.querySelectorAll('.arch-tab-btn');
-            const panes = document.querySelectorAll('.arch-pane');
-            tabs.forEach((tab, i) => {
-                if (i === index) {
-                    tab.classList.add('active', 'bg-primary', 'text-white');
-                    tab.classList.remove('bg-slate-800', 'text-slate-300');
-                } else {
-                    tab.classList.remove('active', 'bg-primary', 'text-white');
-                    tab.classList.add('bg-slate-800', 'text-slate-300');
-                }
-            });
-            panes.forEach((pane, i) => {
-                if (i === index) {
-                    pane.classList.remove('hidden');
-                    pane.classList.add('block');
-                } else {
-                    pane.classList.add('hidden');
-                    pane.classList.remove('block');
-                }
-            });
-        }
     </script>
-    <!-- ================= VU KNOWLEDGEBASE SYSTEM ARCHITECTURE MODAL ================= -->
-    <div id="architecture-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darker/80 backdrop-blur-md hidden transition-all duration-300">
-        <div class="bg-slate-900 border border-slate-700/80 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col relative text-slate-200">
-            
-            <!-- Modal Header -->
-            <div class="p-6 sm:p-8 border-b border-slate-800 flex items-start justify-between gap-4 sticky top-0 bg-slate-900/95 backdrop-blur-sm z-20">
-                <div>
-                    <div class="flex flex-wrap items-center gap-2 mb-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[11px] font-bold">
-                            Architecture Deep Dive
-                        </span>
-                        <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[11px] font-bold">
-                            ezoxkr-dev/VUKnowledgebase
-                        </span>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-white font-heading">
-                        VU Knowledgebase &mdash; Production System Architecture
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">
-                        How document ingestion, high-dimensional vector search, citation RAG, and queue resilience operate.
-                    </p>
-                </div>
-                <button onclick="closeArchitectureModal()" 
-                        class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition flex-shrink-0 cursor-pointer"
-                        aria-label="Close modal">
-                    <i class="fas fa-times text-base"></i>
-                </button>
-            </div>
-
-            <!-- Modal Content Body -->
-            <div class="p-6 sm:p-8 space-y-8">
-                
-                <!-- Architecture Pipeline Overview Banner -->
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
-                        <i class="fas fa-project-diagram"></i> End-to-End Pipeline Visualization
-                    </h4>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-file-upload text-sky-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">1. Ingest &amp; Parse</div>
-                            <div class="text-[10px] text-slate-400">PDF (unpdf) &amp; DOCX</div>
-                        </div>
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-cut text-purple-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">2. Chunking</div>
-                            <div class="text-[10px] text-slate-400">1,200 chars / 150 overlap</div>
-                        </div>
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-microchip text-indigo-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">3. Gemini Vector</div>
-                            <div class="text-[10px] text-slate-400">3072-d Embeddings</div>
-                        </div>
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-database text-teal-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">4. pgvector Store</div>
-                            <div class="text-[10px] text-slate-400">Cosine Distance &lt;=&gt;</div>
-                        </div>
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-robot text-emerald-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">5. Grounded RAG</div>
-                            <div class="text-[10px] text-slate-400">Gemini 3.8-Flash [1][2]</div>
-                        </div>
-                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800/80">
-                            <i class="fas fa-microphone-alt text-pink-400 text-lg mb-2"></i>
-                            <div class="text-[11px] font-bold text-slate-200">6. Whisper STT</div>
-                            <div class="text-[10px] text-slate-400">Groq Audio Search</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Interactive Tab Switcher -->
-                <div>
-                    <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-3" id="arch-tabs">
-                        <button onclick="switchArchTab(0)" class="arch-tab-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-primary text-white transition cursor-pointer">
-                            Vector Search &amp; Chunking
-                        </button>
-                        <button onclick="switchArchTab(1)" class="arch-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition cursor-pointer">
-                            Citation RAG Engine
-                        </button>
-                        <button onclick="switchArchTab(2)" class="arch-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition cursor-pointer">
-                            Queue &amp; Fluid Compute
-                        </button>
-                        <button onclick="switchArchTab(3)" class="arch-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition cursor-pointer">
-                            Multilingual Voice STT
-                        </button>
-                        <button onclick="switchArchTab(4)" class="arch-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition cursor-pointer">
-                            PostgreSQL &amp; pgvector SQL
-                        </button>
-                    </div>
-
-                    <!-- Tab Panes -->
-                    <div class="mt-6">
-                        
-                        <!-- TAB 1: Vector Search & Chunking -->
-                        <div class="arch-pane block space-y-4 text-xs sm:text-sm">
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-layer-group text-primary"></i> Boundary-Aware Semantic Chunking (src/lib/chunk.ts)
-                                </h5>
-                                <p class="text-slate-300 leading-relaxed mb-3">
-                                    Instead of naive fixed-character truncation that cuts sentences in half, the chunker uses a sliding character window of target size <strong class="text-sky-300">1,200 characters</strong> with <strong class="text-sky-300">150-character overlap</strong>. Inside the tail 45% of the window, it locates the nearest semantic boundary (<code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">\n\n</code>, <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">. </code>, <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">! </code>, <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">? </code>) so chunks remain coherent paragraphs.
-                                </p>
-                                <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-300">
-                                    const CHUNK_TARGET = 1200;<br>
-                                    const CHUNK_OVERLAP = 150;<br>
-                                    // Breaks preferentially at paragraph and sentence delimiters
-                                </div>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-brain text-purple-400"></i> Google Gemini Embeddings (src/lib/embed.ts)
-                                </h5>
-                                <p class="text-slate-300 leading-relaxed mb-3">
-                                    Leverages <code class="text-sky-300 bg-slate-800 px-1.5 py-0.5 rounded">gemini-embedding-001</code> via direct REST calls to <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">POST /v1beta/models/gemini-embedding-001:batchEmbedContents</code>. Documents are embedded with task type <strong class="text-emerald-300">RETRIEVAL_DOCUMENT</strong> in batches of up to 16, while user search queries are embedded with <strong class="text-amber-300">RETRIEVAL_QUERY</strong> to optimize vector space alignment. Includes automated retry with exponential backoff and jitter for handling 429/503 spikes.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- TAB 2: Citation RAG Engine -->
-                        <div class="arch-pane hidden space-y-4 text-xs sm:text-sm">
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-shield-alt text-emerald-400"></i> Grounding &amp; Zero-Hallucination Guardrails (src/lib/answer.ts)
-                                </h5>
-                                <p class="text-slate-300 leading-relaxed mb-3">
-                                    The generation engine is powered by <strong class="text-sky-300">gemini-3.8-flash</strong>. Context is formatted into numbered passages (<code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">[1] Source: filename\n{content}</code>) up to 24,000 characters.
-                                </p>
-                                <ul class="list-disc list-inside space-y-2 text-slate-300 mb-3">
-                                    <li><strong class="text-white">Strict Citation Requirement:</strong> Must cite supporting passage numbers like <code class="text-emerald-300">[1]</code> or <code class="text-emerald-300">[2][3]</code> for each factual statement.</li>
-                                    <li><strong class="text-white">Defensive Fallback:</strong> If the context lacks the answer, the model responds: <em>"I do not have that information in the knowledgebase yet."</em> No fabricated figures or outside facts.</li>
-                                    <li><strong class="text-white">Zero Thinking Latency:</strong> Uses <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">thinkingConfig: { thinkingBudget: 0 }</code> to prevent long reasoning chains, dropping latency into the sub-2-second range.</li>
-                                    <li><strong class="text-white">Bilingual Language Mirroring:</strong> Automatically synthesizes the answer in Bengali or English based on the input question language.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- TAB 3: Queue & Fluid Compute -->
-                        <div class="arch-pane hidden space-y-4 text-xs sm:text-sm">
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-bolt text-amber-400"></i> Non-Blocking Ingestion &amp; Persistent State Machine
-                                </h5>
-                                <p class="text-slate-300 leading-relaxed mb-3">
-                                    Uploading files (PDF/DOCX) can take time to embed. Rather than blocking the user's browser, the system uses Vercel Fluid Compute's <code class="text-sky-300 bg-slate-800 px-1 py-0.5 rounded">waitUntil</code> primitive:
-                                </p>
-                                <ol class="list-decimal list-inside space-y-2 text-slate-300">
-                                    <li>On upload, text is extracted synchronously and saved to PostgreSQL as <code class="text-amber-300">pending</code> chunk rows; HTTP 200 is returned immediately.</li>
-                                    <li>Embedding generation continues in the serverless worker after the response is sent.</li>
-                                    <li>All job states live in PostgreSQL (<code class="text-slate-300">pending &rarr; processing &rarr; completed / failed</code>), never ephemeral memory.</li>
-                                    <li><strong class="text-white">Resumption Mechanism:</strong> If a job is aborted, every admin dashboard load hits <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">/api/jobs/resume</code> to reclaim stale pending chunks, plus an hourly Vercel Cron sweep (<code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">/api/cron/process</code>) guarantees 100% completion.</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <!-- TAB 4: Multilingual Voice STT -->
-                        <div class="arch-pane hidden space-y-4 text-xs sm:text-sm">
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-microphone text-pink-400"></i> Speech-to-Text with Groq Whisper (src/lib/transcribe.ts)
-                                </h5>
-                                <p class="text-slate-300 leading-relaxed mb-3">
-                                    The visitor interface integrates live microphone recording via the browser's <code class="text-sky-300 bg-slate-800 px-1.5 py-0.5 rounded">MediaRecorder</code> API (WebM/Opus). The audio payload is streamed to <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">/api/transcribe</code>, which invokes the Groq Whisper API (<code class="text-pink-300">whisper-large-v3</code>) at <code class="text-purple-300 bg-slate-800 px-1 py-0.5 rounded">temperature=0</code>.
-                                </p>
-                                <p class="text-slate-300 leading-relaxed">
-                                    This delivers sub-second, highly accurate multilingual transcription for both English and conversational Bengali campus queries before querying the vector database.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- TAB 5: PostgreSQL Schema & SQL -->
-                        <div class="arch-pane hidden space-y-4 text-xs sm:text-sm">
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                <h5 class="text-white font-bold mb-2 flex items-center gap-2">
-                                    <i class="fas fa-database text-teal-400"></i> pgvector Production Schema (scripts/init-db.mjs)
-                                </h5>
-                                <pre class="bg-slate-900 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-sky-300 overflow-x-auto leading-relaxed">
-CREATE EXTENSION IF NOT EXISTS vector;
-
-CREATE TABLE projects (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  name text NOT NULL UNIQUE,
-  created_at timestamptz NOT NULL DEFAULT now()
-);
-
-CREATE TABLE documents (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  project_id uuid NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
-  filename text NOT NULL,
-  mime_type text NOT NULL,
-  size_bytes bigint NOT NULL,
-  chunk_count integer NOT NULL DEFAULT 0,
-  status text NOT NULL DEFAULT 'pending'
-    CHECK (status IN ('pending', 'processing', 'completed', 'failed')),
-  error text,
-  created_at timestamptz DEFAULT now()
-);
-
-CREATE TABLE chunks (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  document_id uuid NOT NULL REFERENCES documents(id) ON DELETE CASCADE,
-  project_id uuid NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
-  seq integer NOT NULL,
-  content text NOT NULL,
-  status text NOT NULL DEFAULT 'pending',
-  attempts integer NOT NULL DEFAULT 0,
-  embedding vector(3072),
-  UNIQUE (document_id, seq)
-);
-
--- Cosine Nearest Neighbor Retrieval:
-SELECT id, filename, content, 
-       1 - (embedding &lt;=&gt; $query_vec) AS similarity
-FROM chunks JOIN documents ON chunks.document_id = documents.id
-WHERE 1 - (embedding &lt;=&gt; $query_vec) &gt;= 0.55
-ORDER BY embedding &lt;=&gt; $query_vec
-LIMIT 8;</pre>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="p-6 sm:p-8 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 bg-slate-900/95 sticky bottom-0">
-                <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
-                   class="px-5 py-2.5 rounded-full bg-primary hover:bg-primaryDark text-white text-xs sm:text-sm font-semibold transition inline-flex items-center gap-2">
-                    <i class="fab fa-github"></i> Inspect Source on GitHub
-                </a>
-                <button onclick="closeArchitectureModal()" 
-                        class="px-5 py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs sm:text-sm font-semibold transition cursor-pointer">
-                    Close Overview
-                </button>
-            </div>
-
-        </div>
-    </div>
-
 </body>
 </html>
