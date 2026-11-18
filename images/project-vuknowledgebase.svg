@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bgGrad)" />
+
+  <!-- Grid overlay -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="80" x2="800" y2="80" />
+    <line x1="0" y1="160" x2="800" y2="160" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="320" x2="800" y2="320" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="160" y1="0" x2="160" y2="480" />
+    <line x1="320" y1="0" x2="320" y2="480" />
+    <line x1="480" y1="0" x2="480" y2="480" />
+    <line x1="640" y1="0" x2="640" y2="480" />
+  </g>
+
+  <!-- Browser / App Frame -->
+  <g transform="translate(40, 30)" filter="url(#shadow)">
+    <!-- Window Header -->
+    <rect width="720" height="420" rx="16" fill="#0b0f19" stroke="#334155" stroke-width="1.5" />
+    <rect width="720" height="42" rx="16" fill="#1e293b" />
+    <rect y="26" width="720" height="16" fill="#1e293b" />
+
+    <!-- Window Dots -->
+    <circle cx="24" cy="21" r="5" fill="#ef4444" />
+    <circle cx="42" cy="21" r="5" fill="#f59e0b" />
+    <circle cx="60" cy="21" r="5" fill="#10b981" />
+
+    <!-- URL Bar -->
+    <rect x="90" y="10" width="360" height="22" rx="6" fill="#0f172a" />
+    <text x="105" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">https://vu-knowledgebase.vercel.app</text>
+    <rect x="620" y="12" width="75" height="18" rx="4" fill="#059669" opacity="0.2" />
+    <text x="632" y="25" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="bold">● LIVE RAG</text>
+
+    <!-- App Content Inside -->
+    <!-- Brand / Title -->
+    <g transform="translate(30, 65)">
+      <!-- VU Logo Pill -->
+      <rect width="36" height="36" rx="8" fill="#ffffff" />
+      <text x="7" y="25" fill="#0f172a" font-family="sans-serif" font-weight="900" font-size="16">VU</text>
+
+      <text x="48" y="20" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16">Varendra University Knowledge Base</text>
+      <text x="48" y="34" fill="#94a3b8" font-family="sans-serif" font-size="11">Autonomous Ingestion &bull; 3072-d pgvector Semantic Search &bull; Bengali/English RAG</text>
+    </g>
+
+    <!-- Search Input Box Mockup -->
+    <g transform="translate(30, 120)">
+      <rect width="660" height="46" rx="12" fill="#1e293b" stroke="#7c3aed" stroke-width="1.5" />
+      <text x="20" y="28" fill="#e2e8f0" font-family="sans-serif" font-size="13">What is the total tuition fee and waiver for B.Sc. in CSE?</text>
+      
+      <!-- Mic Icon Button -->
+      <rect x="545" y="8" width="30" height="30" rx="8" fill="#334155" />
+      <text x="553" y="28" fill="#cbd5e1" font-size="14">🎙️</text>
+
+      <!-- Ask Button -->
+      <rect x="585" y="8" width="65" height="30" rx="8" fill="url(#purpleGrad)" />
+      <text x="605" y="27" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">Ask</text>
+    </g>
+
+    <!-- Filter chips -->
+    <g transform="translate(30, 180)">
+      <rect x="0" y="0" width="130" height="22" rx="11" fill="#7c3aed" />
+      <text x="12" y="15" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">🎯 Strict Grounding (70%)</text>
+
+      <rect x="140" y="0" width="125" height="22" rx="11" fill="#1e293b" stroke="#334155" />
+      <text x="152" y="15" fill="#cbd5e1" font-family="sans-serif" font-size="10">💰 Tuition &amp; Waivers</text>
+
+      <rect x="275" y="0" width="120" height="22" rx="11" fill="#1e293b" stroke="#334155" />
+      <text x="287" y="15" fill="#cbd5e1" font-family="sans-serif" font-size="10">💻 CSE Curriculum</text>
+
+      <rect x="405" y="0" width="115" height="22" rx="11" fill="#1e293b" stroke="#334155" />
+      <text x="417" y="15" fill="#cbd5e1" font-family="sans-serif" font-size="10">🏛️ Permanent Campus</text>
+    </g>
+
+    <!-- Answer Box -->
+    <g transform="translate(30, 220)">
+      <rect width="660" height="110" rx="12" fill="#131d31" stroke="#334155" stroke-width="1" />
+      <rect x="16" y="14" width="180" height="20" rx="6" fill="#10b981" opacity="0.15" />
+      <text x="24" y="28" fill="#34d399" font-family="sans-serif" font-weight="bold" font-size="10">CITATION-GROUNDED ANSWER</text>
+
+      <text x="16" y="55" fill="#f1f5f9" font-family="sans-serif" font-size="12" font-weight="500">For B.Sc. in CSE at Varendra University, the standard total cost is BDT 5,14,000 for 144 credits.</text>
+      <text x="16" y="75" fill="#f1f5f9" font-family="sans-serif" font-size="12" font-weight="500">Students with GPA 5.00 in both SSC &amp; HSC receive a 50% to 100% merit tuition waiver [1].</text>
+      <text x="16" y="95" fill="#94a3b8" font-family="sans-serif" font-size="11">Special waivers of 25% are granted for female applicants, siblings, and freedom fighter quotas [2].</text>
+    </g>
+
+    <!-- Citation Source Card -->
+    <g transform="translate(30, 345)">
+      <rect width="660" height="52" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1" />
+      <text x="16" y="24" fill="#a78bfa" font-family="sans-serif" font-weight="bold" font-size="11">[1] official_vu_prospectus_cse_tuition.pdf</text>
+      <rect x="545" y="10" width="100" height="20" rx="10" fill="#7c3aed" opacity="0.2" />
+      <text x="555" y="24" fill="#c084fc" font-family="monospace" font-weight="bold" font-size="11">94.8% Match</text>
+      <text x="16" y="42" fill="#94a3b8" font-family="sans-serif" font-size="10">Matched chunks: Department of Computer Science &amp; Engineering &bull; Semester fee breakdown &bull; Page 14</text>
+    </g>
+  </g>
+</svg>

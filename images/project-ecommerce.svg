@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecomBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f" />
+      <stop offset="50%" stop-color="#140b24" />
+      <stop offset="100%" stop-color="#050508" />
+    </linearGradient>
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181528" />
+      <stop offset="100%" stop-color="#100d1c" />
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#a855f7" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="480" fill="url(#ecomBg)" />
+
+  <!-- Window Frame -->
+  <g transform="translate(40, 25)">
+    <rect width="720" height="430" rx="16" fill="#0f0c1b" stroke="#38295c" stroke-width="1.5" />
+    
+    <!-- Navbar Header -->
+    <rect width="720" height="46" rx="16" fill="#140f26" />
+    <rect y="30" width="720" height="16" fill="#140f26" />
+
+    <!-- Window controls -->
+    <circle cx="24" cy="23" r="5" fill="#ef4444" />
+    <circle cx="42" cy="23" r="5" fill="#f59e0b" />
+    <circle cx="60" cy="23" r="5" fill="#10b981" />
+
+    <!-- Logo & Links -->
+    <text x="90" y="29" fill="#f8fafc" font-family="'Outfit', sans-serif" font-weight="900" font-size="16" letter-spacing="2">EZOX</text>
+    <text x="180" y="27" fill="#cbd5e1" font-family="sans-serif" font-size="11">Home</text>
+    <text x="230" y="27" fill="#cbd5e1" font-family="sans-serif" font-size="11">Features</text>
+    <text x="290" y="27" fill="#a855f7" font-family="sans-serif" font-size="11" font-weight="bold">Pricing</text>
+    <text x="345" y="27" fill="#cbd5e1" font-family="sans-serif" font-size="11">Gallery</text>
+
+    <!-- Social Buttons -->
+    <rect x="530" y="14" width="75" height="20" rx="10" fill="#229ed9" opacity="0.2" />
+    <text x="540" y="28" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="bold">✈ Telegram</text>
+
+    <rect x="615" y="14" width="85" height="20" rx="10" fill="#10b981" opacity="0.25" />
+    <text x="625" y="28" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="bold">● STORE LIVE</text>
+
+    <!-- Storefront Hero -->
+    <g transform="translate(30, 65)">
+      <!-- Pill Badge -->
+      <rect x="0" y="0" width="220" height="22" rx="11" fill="#7c3aed" opacity="0.2" stroke="#a855f7" stroke-width="1" />
+      <text x="12" y="15" fill="#d8b4fe" font-family="sans-serif" font-size="10" font-weight="bold">⚡ Safe &amp; Undetected 4.3 Storefront</text>
+
+      <text x="0" y="55" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="800" font-size="24">
+        Dominate with <tspan fill="url(#accentPurple)">Ezox Bypass</tspan>
+      </text>
+      <text x="0" y="75" fill="#94a3b8" font-family="sans-serif" font-size="11">
+        Full-Stack Flask &amp; PostgreSQL E-Commerce platform with automated tokenized license activation.
+      </text>
+    </g>
+
+    <!-- Three Pricing Product Cards -->
+    <g transform="translate(30, 160)">
+      <!-- Card 1: Emulator Weekly -->
+      <g transform="translate(0, 0)">
+        <rect width="210" height="240" rx="14" fill="url(#cardGrad)" stroke="#38295c" stroke-width="1.2" />
+        <text x="20" y="32" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="bold">Emulator Weekly</text>
+        <text x="20" y="65" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="900"><tspan font-size="18" fill="#a855f7">$</tspan>12</text>
+        <text x="65" y="65" fill="#64748b" font-family="sans-serif" font-size="11">/ 7 Days</text>
+        
+        <g transform="translate(20, 85)" fill="#94a3b8" font-family="sans-serif" font-size="10">
+          <text y="15">✓ Customizable ESP</text>
+          <text y="35">✓ Visibility Check</text>
+          <text y="55">✓ Bullet Track &amp; Aimbot</text>
+          <text y="75">✓ Instant Token Dispatch</text>
+        </g>
+
+        <rect x="20" y="185" width="170" height="34" rx="10" fill="#1e1933" stroke="#583e8a" stroke-width="1" />
+        <text x="75" y="206" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="bold">Order Now</text>
+      </g>
+
+      <!-- Card 2: Emulator Monthly (Most Popular) -->
+      <g transform="translate(225, -10)" filter="url(#glow)">
+        <rect width="210" height="255" rx="14" fill="#1d1633" stroke="#a855f7" stroke-width="2" />
+        <!-- Popular Badge -->
+        <rect x="55" y="-10" width="100" height="20" rx="10" fill="url(#accentPurple)" />
+        <text x="75" y="4" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">MOST POPULAR</text>
+
+        <text x="20" y="42" fill="#e9d5ff" font-family="sans-serif" font-size="13" font-weight="bold">Emulator Monthly</text>
+        <text x="20" y="75" fill="#ffffff" font-family="sans-serif" font-size="30" font-weight="900"><tspan font-size="18" fill="#a855f7">$</tspan>30</text>
+        <text x="70" y="75" fill="#94a3b8" font-family="sans-serif" font-size="11">/ 30 Days</text>
+
+        <g transform="translate(20, 95)" fill="#e2e8f0" font-family="sans-serif" font-size="10">
+          <text y="15">✓ Full ESP (Player, BOT, AI)</text>
+          <text y="35">✓ 360 Radar &amp; Ipad View</text>
+          <text y="55">✓ Recoil Stabilization</text>
+          <text y="75">✓ VIP Telegram Webhook</text>
+        </g>
+
+        <rect x="20" y="195" width="170" height="38" rx="10" fill="url(#accentPurple)" />
+        <text x="65" y="219" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">Get License &rarr;</text>
+      </g>
+
+      <!-- Card 3: Android Monthly -->
+      <g transform="translate(450, 0)">
+        <rect width="210" height="240" rx="14" fill="url(#cardGrad)" stroke="#38295c" stroke-width="1.2" />
+        <text x="20" y="32" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="bold">Android Monthly</text>
+        <text x="20" y="65" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="900"><tspan font-size="18" fill="#a855f7">$</tspan>25</text>
+        <text x="65" y="65" fill="#64748b" font-family="sans-serif" font-size="11">/ 30 Days</text>
+
+        <g transform="translate(20, 85)" fill="#94a3b8" font-family="sans-serif" font-size="10">
+          <text y="15">✓ Android Root/Non-Root</text>
+          <text y="35">✓ Minimalistic ESP</text>
+          <text y="55">✓ Anti-Ban Driver Engine</text>
+          <text y="75">✓ 24/7 Support Access</text>
+        </g>
+
+        <rect x="20" y="185" width="170" height="34" rx="10" fill="#1e1933" stroke="#583e8a" stroke-width="1" />
+        <text x="75" y="206" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="bold">Order Now</text>
+      </g>
+    </g>
+  </g>
+</svg>

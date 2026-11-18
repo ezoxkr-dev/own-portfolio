@@ -1,66 +1,108 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustarif Alom | Software Engineer & AI Systems</title>
-    <meta name="description" content="Portfolio of Mustarif Alom — Full-Stack Software Engineer & Final-Year CSE Undergraduate at Varendra University.">
+    <title>Mustarif Alom | Software Engineer &amp; AI Systems Builder &bull; Varendra University</title>
+    <meta name="description" content="Portfolio of Mustarif Alom — Full-Stack Software Engineer, AI Systems Builder, and Final-Year CSE Undergraduate at Varendra University undergoing Industrial Attachment with ASTGD.">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    
+    <!-- Google Fonts: Google Sans / Roboto / Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563eb',     /* Royal Blue 600 */
-                        primaryDark: '#1d4ed8', /* Royal Blue 700 */
-                        brandNavy: '#0f172a',   /* Slate 900 */
+                        /* Google Aesthetic Palette */
+                        googleBlue: '#1a73e8',
+                        googleBlueDark: '#174ea6',
+                        googleBlueLight: '#e8f0fe',
+                        googleGreen: '#1e8e3e',
+                        googleGreenLight: '#e6f4ea',
+                        googleAmber: '#f9ab00',
+                        googleAmberLight: '#fef7e0',
+                        googleRed: '#d93025',
+                        googleRedLight: '#fce8e6',
+                        surfaceBg: '#f8fafd',
+                        surfaceCard: '#ffffff',
+                        borderSubtle: '#dadce0',
+                        textPrimary: '#202124',
+                        textSecondary: '#5f6368',
+                        textMuted: '#80868b',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        sans: ['Google Sans', 'Inter', '-apple-system', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
                     },
+                    boxShadow: {
+                        'google': '0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15)',
+                        'google-hover': '0 4px 12px 0 rgba(60,64,67,.2), 0 1px 3px 0 rgba(60,64,67,.15)',
+                        'google-elevated': '0 8px 24px rgba(60,64,67,.18)',
+                    }
                 }
             }
         }
     </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
+            font-family: 'Google Sans', 'Inter', sans-serif;
+            background-color: #f8fafd;
+            background-image: radial-gradient(1200px 600px at 50% 0%, #e8f0fe 0%, #f8fafd 55%, #f1f3f4 100%);
+            color: #202124;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        .google-card {
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,.25), 0 1px 3px 1px rgba(60,64,67,.12);
+            transition: all 0.22s cubic-bezier(.25,.8,.25,1);
         }
 
-        .card-shadow {
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+        .google-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 14px 0 rgba(60,64,67,.22), 0 2px 4px 0 rgba(60,64,67,.12);
+            border-color: #bdc1c6;
         }
 
-        .card-hover {
-            transition: all 0.25s ease-in-out;
+        .chip-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid #dadce0;
+            background-color: #ffffff;
+            color: #3c4043;
+            transition: all 0.15s ease;
         }
 
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.04);
-            border-color: #cbd5e1;
+        .chip-pill:hover {
+            background-color: #f8fafd;
+            border-color: #1a73e8;
+            color: #1a73e8;
         }
 
-        /* Nav link underline */
         .nav-link {
             position: relative;
+            color: #5f6368;
+            font-weight: 500;
             transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #1a73e8;
         }
 
         .nav-link::after {
@@ -70,141 +112,144 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #2563eb;
+            background-color: #1a73e8;
             transition: width 0.2s ease;
         }
 
-        .nav-link:hover::after,
-        .nav-link.active::after {
+        .nav-link:hover::after, .nav-link.active::after {
             width: 100%;
         }
 
-        .nav-link.active {
-            color: #2563eb;
-            font-weight: 600;
-        }
-
-        /* Timeline styling */
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            top: 0;
-            bottom: 0;
-            left: 24px;
-            background-color: #e2e8f0;
-        }
-
-        @media (min-width: 768px) {
-            .timeline-line::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        /* Modal Blur */
+        .modal-active {
+            overflow: hidden;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-700 antialiased">
+<body class="min-h-screen flex flex-col">
 
-    <!-- ================= NAVBAR ================= -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-slate-200/80 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight font-heading text-slate-900">
-                    Mustarif<span class="text-blue-600">.</span>
-                </a>
-                
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link hover:text-slate-900">About</a>
-                    <a href="#projects" class="nav-link hover:text-slate-900">Projects</a>
-                    <a href="#skills" class="nav-link hover:text-slate-900">Skills</a>
-                    <a href="#experience" class="nav-link hover:text-slate-900">Experience</a>
-                    <a href="#contact" class="nav-link hover:text-slate-900">Contact</a>
-                    <a href="#contact" class="ml-4 px-5 py-2 rounded-full bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition shadow-sm">
-                        Get In Touch
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="menu-toggle" aria-label="Toggle menu" class="text-slate-700 hover:text-blue-600 focus:outline-none p-2">
-                        <i id="menu-icon" class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- ================= GOOGLE DEVELOPER NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-borderSubtle">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
             
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-200 space-y-3 pb-3 text-center">
-                <a href="#home" class="block py-2 text-slate-700 font-medium">Home</a>
-                <a href="#about" class="block py-2 text-slate-700 font-medium">About</a>
-                <a href="#projects" class="block py-2 text-slate-700 font-medium">Projects</a>
-                <a href="#skills" class="block py-2 text-slate-700 font-medium">Skills</a>
-                <a href="#experience" class="block py-2 text-slate-700 font-medium">Experience</a>
-                <a href="#contact" class="block py-2 text-slate-700 font-medium">Contact</a>
-                <a href="#contact" class="inline-block mt-2 px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold text-xs">Get In Touch</a>
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-2.5 text-textPrimary font-bold text-lg tracking-tight">
+                <span class="w-8 h-8 rounded-lg bg-googleBlue text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                    M
+                </span>
+                <span>Mustarif Alom<span class="text-googleBlue">.</span></span>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About &amp; Attachment</a>
+                <a href="#projects" class="nav-link">Projects &amp; Live Demos</a>
+                <a href="#skills" class="nav-link">AI &amp; Engineering</a>
+                <a href="#experience" class="nav-link">ASTGD &amp; Timeline</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Right CTA Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-googleGreenLight text-googleGreen border border-emerald-300 hover:bg-emerald-100 transition shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-googleGreen animate-pulse"></span>
+                    <span>Live App &rarr;</span>
+                </a>
+                <a href="#contact" 
+                   class="px-5 py-2 rounded-full bg-googleBlue hover:bg-googleBlueDark text-white text-xs font-semibold shadow-google transition">
+                    Get In Touch
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="menu-toggle" class="md:hidden text-textSecondary hover:text-textPrimary focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i id="menu-icon" class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-borderSubtle px-6 py-4 space-y-3">
+            <a href="#home" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">Home</a>
+            <a href="#about" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">About &amp; Attachment</a>
+            <a href="#projects" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">Projects &amp; Live Demos</a>
+            <a href="#skills" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">AI &amp; Engineering</a>
+            <a href="#experience" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">ASTGD &amp; Timeline</a>
+            <a href="#contact" class="block py-2 text-textSecondary hover:text-googleBlue font-medium text-sm">Contact</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
+                   class="w-full text-center py-2.5 rounded-full bg-googleGreenLight text-googleGreen font-semibold text-xs border border-emerald-300">
+                    Visit VU Knowledgebase Live
+                </a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- ================= HERO SECTION ================= -->
-    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 bg-white relative">
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
                 
-                <!-- Left Hero Content -->
+                <!-- Left Hero Information -->
                 <div class="md:w-3/5 text-center md:text-left">
-                    <!-- Clean Status Chip -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-700 mb-6">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>Final-Year CSE @ Varendra University &bull; Graduating May 2027</span>
+                    
+                    <!-- Top Pill Chips: Student & Industrial Attachment Context -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-borderSubtle shadow-xs text-xs font-medium text-textSecondary">
+                            <span class="w-2.5 h-2.5 rounded-full bg-googleGreen animate-pulse"></span>
+                            <span>Final-Year CSE @ Varendra University &bull; 33rd Batch</span>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-googleBlueLight text-googleBlueDark border border-blue-200 text-xs font-semibold">
+                            <i class="fas fa-building text-[11px]"></i>
+                            <span>Industrial Attachment @ ASTGD</span>
+                        </div>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight font-heading">
-                        Hi, I'm <span class="text-blue-600">Mustarif Alom</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-textPrimary mb-4 leading-tight">
+                        Hi, I'm <span class="text-googleBlue">Mustarif Alom</span>
                     </h1>
                     
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-slate-700">
-                        Full-Stack Software Engineer &amp; AI Systems Builder
+                    <h2 class="text-xl sm:text-2xl font-medium mb-6 text-textSecondary">
+                        Full-Stack Software Engineer &amp; Applied AI Trainee
                     </h2>
                     
-                    <p class="text-base sm:text-lg mb-8 text-slate-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                        I engineer reliable full-stack web applications, vector search pipelines, and practical software solutions. Experienced with <strong class="text-slate-900 font-semibold">Python, Flask, Next.js 16, PostgreSQL &amp; pgvector</strong>, alongside undergraduate thesis research in deep learning.
+                    <p class="text-base sm:text-lg mb-8 text-textSecondary max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        Undergraduate engineer specializing in high-reliability web systems, vector search pipelines, and practical database architecture. Experienced building production systems with <strong class="text-textPrimary font-semibold">Next.js 16, Python Flask, PostgreSQL + pgvector</strong>, and deep learning models for biosignal classification.
                     </p>
 
-                    <!-- CTAs -->
+                    <!-- CTAs with Live Links -->
                     <div class="flex flex-wrap items-center justify-center md:justify-start gap-3.5">
-                        <a href="#projects" class="px-7 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-sm inline-flex items-center gap-2 transition">
-                            <span>View Projects</span>
-                            <i class="fas fa-arrow-down text-xs"></i>
-                        </a>
                         <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
-                           class="px-6 py-3 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-semibold text-sm shadow-sm inline-flex items-center gap-2 transition">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                            <span>Live Attachment Website &rarr;</span>
+                           class="px-6 py-3 rounded-full bg-googleBlue hover:bg-googleBlueDark text-white font-semibold text-sm shadow-google inline-flex items-center gap-2 transition">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                            <span>Visit VU Knowledgebase (Live)</span>
                         </a>
-                        <a href="#contact" class="px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium text-sm shadow-sm inline-flex items-center gap-2 transition">
+                        <a href="#projects" class="px-6 py-3 rounded-full bg-white hover:bg-surfaceBg text-textPrimary border border-borderSubtle font-medium text-sm shadow-xs inline-flex items-center gap-2 transition">
+                            <span>Explore Projects &amp; Live Demos</span>
+                            <i class="fas fa-arrow-down text-xs text-textMuted"></i>
+                        </a>
+                        <a href="#contact" class="px-5 py-3 rounded-full bg-white hover:bg-surfaceBg text-googleBlue border border-borderSubtle font-medium text-sm shadow-xs inline-flex items-center gap-2 transition">
                             <span>Let's Talk</span>
                         </a>
                     </div>
 
-                    <!-- Social Icons Row -->
-                    <div class="flex items-center justify-center md:justify-start mt-10 space-x-4">
+                    <!-- Social Presence -->
+                    <div class="flex items-center justify-center md:justify-start mt-10 space-x-3.5">
                         <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition shadow-sm" title="GitHub">
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-borderSubtle text-textSecondary hover:text-textPrimary hover:border-textPrimary transition shadow-xs" title="GitHub">
                             <i class="fab fa-github text-lg"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition shadow-sm" title="LinkedIn">
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-borderSubtle text-textSecondary hover:text-googleBlue hover:border-googleBlue transition shadow-xs" title="LinkedIn">
                             <i class="fab fa-linkedin-in text-base"></i>
                         </a>
                         <a href="mailto:mustarifalom10@gmail.com" 
-                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-rose-600 hover:text-white transition shadow-sm" title="Email">
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-borderSubtle text-textSecondary hover:text-googleRed hover:border-googleRed transition shadow-xs" title="Email">
                             <i class="fas fa-envelope text-base"></i>
                         </a>
                         <a href="tel:+8801780109125" 
-                           class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-emerald-600 hover:text-white transition shadow-sm" title="Phone">
+                           class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-borderSubtle text-textSecondary hover:text-googleGreen hover:border-googleGreen transition shadow-xs" title="Phone">
                             <i class="fas fa-phone text-sm"></i>
                         </a>
                     </div>
@@ -213,7 +258,9 @@
                 <!-- Right Profile Portrait -->
                 <div class="md:w-2/5 flex justify-center">
                     <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
-                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
+                        <!-- Google Color Accent Ring -->
+                        <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-googleBlue via-googleGreen to-googleAmber opacity-75 blur-xs"></div>
+                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-google-elevated bg-white">
                             <img src="images/profile.jpg" 
                                  alt="Mustarif Alom" 
                                  class="w-full h-full object-cover object-top">
@@ -225,60 +272,90 @@
         </div>
     </section>
 
-    <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" class="py-24 bg-slate-50 border-t border-slate-200/80">
+    <!-- ================= ABOUT & INDUSTRIAL ATTACHMENT SECTION ================= -->
+    <section id="about" class="py-20 border-t border-borderSubtle bg-white/70">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">About Me</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Engineering software with real-world utility, robust backend architecture, and intelligence.</p>
+            
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-googleBlueLight text-googleBlueDark border border-blue-200 text-xs font-semibold mb-3">
+                    <i class="fas fa-user-graduate"></i> Academic Profile &bull; 33rd Batch
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-textPrimary tracking-tight">About Me &amp; Industrial Attachment</h2>
+                <div class="w-12 h-1 bg-googleBlue mx-auto rounded-full mt-3"></div>
+                <p class="text-textSecondary mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+                    Grounded software engineering, applied vector AI, and systems built to solve real institutional challenges.
+                </p>
             </div>
             
-            <div class="max-w-4xl mx-auto bg-white p-8 sm:p-10 rounded-2xl border border-slate-200 card-shadow">
-                <h3 class="text-2xl font-bold text-slate-900 mb-4 font-heading">
-                    Bridging Full-Stack Development with Applied AI
-                </h3>
-                <p class="text-slate-600 leading-relaxed mb-5 text-base">
-                    I am a final-year <strong>Computer Science &amp; Engineering undergraduate at Varendra University</strong> (Rajshahi, Bangladesh) graduating in May 2027. My technical foundation spans both full-stack software development and practical AI systems, focusing on clean code, database design, and real performance.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-8 text-base">
-                    For my <strong>Industrial Attachment (33rd Batch)</strong>, I engineered <strong>VU Knowledgebase</strong>—a document ingestion and semantic search platform using Next.js 16, PostgreSQL, <code class="text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded text-xs font-mono">pgvector</code>, and Google Gemini embeddings. Alongside academics, I founded and operate <strong>Ezox Bypass</strong> (an online game optimization platform) and am conducting thesis research on <strong>Interpretable CNN-Transformer deep learning models</strong> for EEG emotion recognition.
-                </p>
+            <div class="max-w-4xl mx-auto google-card p-8 sm:p-10 rounded-2xl">
                 
-                <!-- Quick Info Details Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-100 text-sm">
-                    <div class="space-y-2.5">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-university text-blue-600 w-5"></i>
-                            <span class="text-slate-500">University:</span>
-                            <span class="text-slate-900 font-medium">Varendra University, Rajshahi</span>
+                <!-- ASTGD Industrial Attachment Highlight Banner -->
+                <div class="p-5 rounded-xl bg-googleBlueLight/50 border border-blue-200 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-10 h-10 rounded-lg bg-googleBlue text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-building text-lg"></i>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-graduation-cap text-blue-600 w-5"></i>
-                            <span class="text-slate-500">Degree:</span>
-                            <span class="text-slate-900 font-medium">B.Sc. in CSE (Final Year, 33rd Batch)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-chart-line text-blue-600 w-5"></i>
-                            <span class="text-slate-500">CGPA:</span>
-                            <span class="text-slate-900 font-medium">3.10+ / 4.00 (through 6th Semester)</span>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-googleBlueDark">Industrial Attachment Collaboration</span>
+                            <h4 class="text-base font-bold text-textPrimary">ASTGD (Advance Software Technology &amp; Gaming Development)</h4>
+                            <p class="text-xs text-textSecondary mt-0.5">
+                                Silicon Tower (Bangabandhu Hi-Tech Park, Rajshahi) &bull; In collaboration with Varendra University Department of CSE.
+                            </p>
                         </div>
                     </div>
-                    <div class="space-y-2.5">
+                    <a href="https://www.astgd.com/" target="_blank" rel="noopener noreferrer" 
+                       class="chip-pill text-xs font-semibold text-googleBlue border-blue-300 hover:bg-white self-start sm:self-center">
+                        <span>ASTGD Office</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <h3 class="text-xl sm:text-2xl font-bold text-textPrimary mb-4">
+                    Pragmatic Problem Solver &bull; From Classroom Fundamentals to Production Systems
+                </h3>
+                
+                <p class="text-textSecondary leading-relaxed mb-4 text-sm sm:text-base">
+                    I am a final-year <strong>Computer Science &amp; Engineering undergraduate at Varendra University</strong> (Rajshahi, Bangladesh), graduating in May 2027. My technical focus centers on backend engineering, scalable database schemas, and cost-effective AI integration that delivers tangible value.
+                </p>
+                
+                <p class="text-textSecondary leading-relaxed mb-6 text-sm sm:text-base">
+                    For my <strong>Industrial Attachment flagship project</strong>, I engineered <strong>VU Knowledgebase</strong>—a domain-specific knowledge ingestion and semantic RAG search platform tailored for Varendra University. It bridges modern AI with enterprise database design: parsing unstructured PDFs, computing 3072-dimensional vector embeddings, and executing sub-second similarity retrieval via PostgreSQL <code class="font-mono text-xs text-googleBlue bg-blue-50 px-1.5 py-0.5 rounded">pgvector</code> with zero-hallucination citations.
+                </p>
+
+                <!-- Student Qualifications Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-borderSubtle text-sm">
+                    <div class="space-y-3">
                         <div class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-blue-600 w-5"></i>
-                            <span class="text-slate-500">Email:</span>
-                            <a href="mailto:mustarifalom10@gmail.com" class="text-slate-900 font-medium hover:text-blue-600 transition">mustarifalom10@gmail.com</a>
+                            <i class="fas fa-university text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Institution:</span>
+                            <span class="text-textPrimary font-medium">Varendra University, Rajshahi</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fas fa-phone text-blue-600 w-5"></i>
-                            <span class="text-slate-500">Phone:</span>
-                            <a href="tel:+8801780109125" class="text-slate-900 font-medium hover:text-blue-600 transition">+880 1780-109125</a>
+                            <i class="fas fa-graduation-cap text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Degree:</span>
+                            <span class="text-textPrimary font-medium">B.Sc. in CSE (Final Year, 33rd Batch)</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fas fa-map-marker-alt text-blue-600 w-5"></i>
-                            <span class="text-slate-500">Location:</span>
-                            <span class="text-slate-900 font-medium">Rajshahi, Bangladesh</span>
+                            <i class="fas fa-award text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Academic Standing:</span>
+                            <span class="text-textPrimary font-medium">CGPA 3.10+ / 4.00 (6 Semesters)</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-laptop-code text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Commercial Project:</span>
+                            <span class="text-textPrimary font-medium">Ezox Storefront &amp; Automation Platform</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-brain text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Thesis Area:</span>
+                            <span class="text-textPrimary font-medium">CNN-Transformer for EEG Biosignals</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-googleBlue w-5 text-center"></i>
+                            <span class="text-textSecondary">Location:</span>
+                            <span class="text-textPrimary font-medium">Rajshahi, Bangladesh</span>
                         </div>
                     </div>
                 </div>
@@ -286,197 +363,251 @@
         </div>
     </section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="py-24 bg-white border-t border-slate-200/80">
+    <!-- ================= FEATURED PROJECTS WITH LIVE DEMOS ================= -->
+    <section id="projects" class="py-24 border-t border-borderSubtle">
         <div class="container mx-auto px-6">
+            
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
-                    <i class="fas fa-folder-open"></i> Portfolio Showcase
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-googleGreenLight text-googleGreen border border-emerald-300 text-xs font-semibold mb-3">
+                    <span class="w-2 h-2 rounded-full bg-googleGreen animate-pulse"></span>
+                    <span>Verified Production Deployments</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Featured Projects</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Real systems, vector search pipelines, and web applications with live deployments.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-textPrimary tracking-tight">Featured Projects &amp; Live Servers</h2>
+                <div class="w-12 h-1 bg-googleBlue mx-auto rounded-full mt-3"></div>
+                <p class="text-textSecondary mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+                    Every project below has an active live server/preview and source repository. Click to interact directly!
+                </p>
             </div>
             
-            <!-- Standard 2x2 Clean Project Cards Grid -->
+            <!-- 2x2 Grid with Authentic Website Previews -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-                <!-- Project 1: VU Knowledgebase (Live Attachment Project) -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
-                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
-                             alt="VU Knowledgebase - Vector Search" 
+                <!-- PROJECT 1: VU Knowledgebase (Live Attachment Flagship) -->
+                <div class="google-card rounded-2xl overflow-hidden flex flex-col group">
+                    <!-- Authentic Website Preview SVG -->
+                    <div class="h-60 overflow-hidden relative bg-slate-900 border-b border-borderSubtle">
+                        <img src="images/project-vuknowledgebase.svg" 
+                             alt="VU Knowledgebase Live Application Interface" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-blue-600">AI &amp; Semantic Search</span>
-                            <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live on Vercel
+                        <div class="absolute top-3 right-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold shadow-md">
+                                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Live on Vercel
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
+                    </div>
+
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs uppercase font-bold tracking-wider text-googleBlue">Industrial Attachment Flagship</span>
+                            <span class="text-[11px] font-mono font-medium text-textMuted">ASTGD / VU 33rd Batch</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-textPrimary mb-1">
                             VU Knowledgebase
                         </h3>
-                        <p class="text-xs font-medium text-slate-500 mb-3">
-                            Autonomous Document Ingestion &amp; Vector Search Platform
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                            An intelligent document ingestion and semantic search engine engineered for Varendra University (33rd batch Industrial Attachment). Ingests PDF and DOCX files, generates 3072-dimensional vector embeddings with Google Gemini, and performs sub-second similarity retrieval with PostgreSQL <code class="text-blue-700 bg-blue-50 px-1 py-0.5 rounded text-xs">pgvector</code>. Provides citation-grounded RAG answers in English and বাংলা via Gemini 3.8-Flash alongside real-time voice search with Groq Whisper.
+                        <p class="text-xs font-medium text-textSecondary mb-3">
+                            Autonomous Document Ingestion, 3072-d pgvector Similarity Search &amp; Grounded RAG Platform
                         </p>
                         
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6 flex-grow">
+                            An end-to-end knowledge base and semantic search engine engineered for Varendra University. Parses multi-format documents (PDF, DOCX, TXT), performs sentence-boundary sliding-window chunking, computes 3072-dimensional vector embeddings with Google Gemini (<code class="text-xs font-mono bg-blue-50 text-googleBlue px-1 py-0.5 rounded">gemini-embedding-001</code>), and indexes them into PostgreSQL with <code class="text-xs font-mono bg-blue-50 text-googleBlue px-1 py-0.5 rounded">pgvector</code>. Features citation-grounded RAG answers via <code class="text-xs font-mono bg-blue-50 text-googleBlue px-1 py-0.5 rounded">gemini-3.8-flash</code> in English &amp; Bangla, multimodal voice search via Groq Whisper (<code class="text-xs font-mono bg-blue-50 text-googleBlue px-1 py-0.5 rounded">whisper-large-v3</code>), and asynchronous queue resilience.
+                        </p>
+                        
+                        <!-- Technology Chips -->
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Next.js 16</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">pgvector</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Gemini Embeddings</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Gemini 3.8-Flash</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Whisper STT</span>
+                            <span class="chip-pill">Next.js 16</span>
+                            <span class="chip-pill">PostgreSQL</span>
+                            <span class="chip-pill">pgvector (Cosine)</span>
+                            <span class="chip-pill">Gemini 3072-d</span>
+                            <span class="chip-pill">Gemini Flash RAG</span>
+                            <span class="chip-pill">Groq Whisper STT</span>
+                            <span class="chip-pill">Text-to-Speech (TTS)</span>
+                            <span class="chip-pill">TypeScript</span>
                         </div>
                         
-                        <!-- Clickable Links: Live Website & Repo -->
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 gap-3">
+                        <!-- Action Buttons: Live Server & Repository -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-borderSubtle">
                             <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
-                               class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition shadow-sm">
-                                <i class="fas fa-external-link-alt text-[10px]"></i> Visit Live Website
+                               class="px-5 py-2.5 rounded-full bg-googleBlue hover:bg-googleBlueDark text-white text-xs font-semibold inline-flex items-center gap-2 transition shadow-google">
+                                <i class="fas fa-globe"></i>
+                                <span>Visit Live Website</span>
                             </a>
                             <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer" 
-                               class="text-xs font-semibold text-slate-600 hover:text-blue-600 transition inline-flex items-center gap-1.5">
-                                <i class="fab fa-github text-sm"></i> ezoxkr-dev/VUKnowledgebase
+                               class="px-4 py-2 rounded-full bg-white hover:bg-surfaceBg text-textPrimary border border-borderSubtle text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fab fa-github text-sm"></i>
+                                <span>Source Code</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Full-Stack E-Commerce Platform -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
-                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" 
-                             alt="Full-Stack E-Commerce Platform" 
+                <!-- PROJECT 2: Full-Stack E-Commerce Storefront -->
+                <div class="google-card rounded-2xl overflow-hidden flex flex-col group">
+                    <!-- Authentic Website Preview SVG -->
+                    <div class="h-60 overflow-hidden relative bg-slate-900 border-b border-borderSubtle">
+                        <img src="images/project-ecommerce.svg" 
+                             alt="Ezox Storefront Live Web Application Interface" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-blue-600">FULL-STACK WEB APP</span>
-                            <span class="text-xs bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-0.5 rounded-full font-semibold">
-                                Production Backend
+                        <div class="absolute top-3 right-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-googleBlue text-white text-xs font-bold shadow-md">
+                                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Live Storefront
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
-                            Full-Stack E-Commerce Platform
-                        </h3>
-                        <p class="text-xs font-medium text-slate-500 mb-3">
-                            Python, Flask &amp; PostgreSQL Enterprise Store
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                            A complete digital storefront engineered with Python and Flask. Implements role-based authentication (customer and admin), secure token-based password reset, shopping cart checkout, order tracking, and an admin management portal. Features strict security hardening with CSRF protection, bleach sanitization, CSP/HSTS, and automated SMTP/Telegram alerts.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Flask</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Tailwind CSS</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">JavaScript</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Security Hardening</span>
+                    </div>
+
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs uppercase font-bold tracking-wider text-googleBlue">FULL-STACK ENTERPRISE STORE</span>
+                            <span class="text-[11px] font-mono font-medium text-textMuted">Flask &bull; PostgreSQL</span>
                         </div>
                         
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 gap-3">
+                        <h3 class="text-xl font-bold text-textPrimary mb-1">
+                            Full-Stack E-Commerce Storefront
+                        </h3>
+                        <p class="text-xs font-medium text-textSecondary mb-3">
+                            Python, Flask, PostgreSQL &amp; Automated License Dispatch Engine
+                        </p>
+                        
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6 flex-grow">
+                            A complete production digital storefront engineered with Python and Flask. Implements role-based access control (RBAC customer and admin portals via <code class="text-xs font-mono bg-blue-50 text-googleBlue px-1 py-0.5 rounded">make_admin.py</code>), secure tokenized checkout, dynamic pricing packages ($12-$55), and automated webhook delivery via SMTP &amp; Telegram Bot API. Hardened with CSRF protection, bleach HTML sanitization, CSP/HSTS headers, and database connection pooling.
+                        </p>
+                        
+                        <!-- Technology Chips -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="chip-pill">Python</span>
+                            <span class="chip-pill">Flask</span>
+                            <span class="chip-pill">PostgreSQL</span>
+                            <span class="chip-pill">Tailwind CSS</span>
+                            <span class="chip-pill">RBAC Admin Portal</span>
+                            <span class="chip-pill">Telegram Webhooks</span>
+                            <span class="chip-pill">Security Hardened</span>
+                        </div>
+                        
+                        <!-- Action Buttons: Live Server & Repository -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-borderSubtle">
+                            <a href="https://ezoxkr-dev.github.io/ecommerce_website/" target="_blank" rel="noopener noreferrer" 
+                               class="px-5 py-2.5 rounded-full bg-googleBlue hover:bg-googleBlueDark text-white text-xs font-semibold inline-flex items-center gap-2 transition shadow-google">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Visit Live Storefront</span>
+                            </a>
                             <a href="https://github.com/ezoxkr-dev/ecommerce_website" target="_blank" rel="noopener noreferrer" 
-                               class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition shadow-sm">
-                                <i class="fab fa-github"></i> Open Repository
+                               class="px-4 py-2 rounded-full bg-white hover:bg-surfaceBg text-textPrimary border border-borderSubtle text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fab fa-github text-sm"></i>
+                                <span>Source Code</span>
                             </a>
-                            <span class="text-xs font-medium text-slate-500">
-                                <i class="fas fa-shield-alt text-blue-600"></i> Hardened Store
-                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Ezox Bypass Platform -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
-                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" 
-                             alt="Ezox Bypass - Gaming Platform" 
+                <!-- PROJECT 3: Ezox Bypass Platform & Telegram Bot -->
+                <div class="google-card rounded-2xl overflow-hidden flex flex-col group">
+                    <!-- Authentic Website Preview SVG -->
+                    <div class="h-60 overflow-hidden relative bg-slate-900 border-b border-borderSubtle">
+                        <img src="images/project-ezoxbypass.svg" 
+                             alt="Ezox Bypass Optimization Engine Telemetry" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-emerald-600">LIVE SOFTWARE VENTURE</span>
-                            <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full font-semibold">
-                                Active Business
+                        <div class="absolute top-3 right-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500 text-white text-xs font-bold shadow-md">
+                                <i class="fab fa-telegram-plane"></i> 8.2k Community
                             </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
-                            Ezox Bypass Web &amp; Bot Platform
-                        </h3>
-                        <p class="text-xs font-medium text-slate-500 mb-3">
-                            Game Optimization Solutions &bull; Distributed Infrastructure
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                            Founded and operate an active online business delivering gaming software utilities and system optimization tools. Engineered the full-stack web storefront with Python, Flask, and PostgreSQL. Automated customer order fulfillment and transaction alerts via SMTP and Telegram Bot API, actively supporting users across Discord and Telegram.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Flask</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">PostgreSQL</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Telegram Bot API</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Discord API</span>
+                    </div>
+
+                    <div class="p-6 sm:p-7 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs uppercase font-bold tracking-wider text-googleGreen">COMMERCIAL VENTURE</span>
+                            <span class="text-[11px] font-mono font-medium text-textMuted">Operational Since April 2025</span>
                         </div>
                         
-                        <div class="flex items-center justify-start gap-3 pt-4 border-t border-slate-100">
+                        <h3 class="text-xl font-bold text-textPrimary mb-1">
+                            Ezox Bypass Web &amp; Automation Platform
+                        </h3>
+                        <p class="text-xs font-medium text-textSecondary mb-3">
+                            Game Optimization Telemetry, Low-Latency Networking &amp; Bot Automation
+                        </p>
+                        
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6 flex-grow">
+                            Founded and operate an active digital gaming utilities venture providing driver-level game optimization and telemetry tools. Built automated user validation and Telegram bot license dispatch pipelines handling high concurrent user inquiries, alongside 24/7 community moderation across Telegram and Discord communities.
+                        </p>
+                        
+                        <!-- Technology Chips -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="chip-pill">Python Backend</span>
+                            <span class="chip-pill">Telegram Bot API</span>
+                            <span class="chip-pill">Discord API</span>
+                            <span class="chip-pill">Kernel Optimization</span>
+                            <span class="chip-pill">System Telemetry</span>
+                            <span class="chip-pill">Live Operations</span>
+                        </div>
+                        
+                        <!-- Action Buttons: Live Telegram Channel & Discord -->
+                        <div class="flex flex-wrap items-center justify-start gap-3 pt-4 border-t border-borderSubtle">
                             <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer" 
-                               class="px-4 py-2 rounded-lg bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 text-xs font-semibold inline-flex items-center gap-1.5 transition">
-                                <i class="fab fa-telegram-plane"></i> Telegram Channel
+                               class="px-5 py-2.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold inline-flex items-center gap-2 transition shadow-xs">
+                                <i class="fab fa-telegram-plane"></i>
+                                <span>Join Telegram Hub</span>
                             </a>
                             <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer" 
-                               class="px-4 py-2 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 text-xs font-semibold inline-flex items-center gap-1.5 transition">
-                                <i class="fab fa-discord"></i> Discord Community
+                               class="px-4 py-2 rounded-full bg-white hover:bg-surfaceBg text-textPrimary border border-borderSubtle text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fab fa-discord text-indigo-600"></i>
+                                <span>Discord Community</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4: Interpretable CNN-Transformer EEG Thesis -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col group">
-                    <div class="h-56 overflow-hidden relative border-b border-slate-100 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80" 
-                             alt="EEG Emotion Recognition" 
+                <!-- PROJECT 4: Interpretable CNN-Transformer EEG Thesis -->
+                <div class="google-card rounded-2xl overflow-hidden flex flex-col group">
+                    <!-- Authentic Website Preview SVG -->
+                    <div class="h-60 overflow-hidden relative bg-slate-900 border-b border-borderSubtle">
+                        <img src="images/project-eeg-thesis.svg" 
+                             alt="EEG Emotion Recognition CNN-Transformer Architecture" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white text-xs font-bold shadow-md">
+                                <i class="fas fa-brain"></i> Undergraduate Thesis
+                            </span>
+                        </div>
                     </div>
+
                     <div class="p-6 sm:p-7 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs uppercase font-bold tracking-wider text-purple-600">DEEP LEARNING</span>
-                            <span class="text-xs bg-purple-50 text-purple-700 border border-purple-200 px-2.5 py-0.5 rounded-full font-semibold">
-                                Undergraduate Thesis
-                            </span>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs uppercase font-bold tracking-wider text-purple-600">RESEARCH &amp; DEEP LEARNING</span>
+                            <span class="text-[11px] font-mono font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Final Stage</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-1.5 font-heading">
-                            Interpretable CNN-Transformer
+                        
+                        <h3 class="text-xl font-bold text-textPrimary mb-1">
+                            Interpretable CNN-Transformer for EEG Biosignals
                         </h3>
-                        <p class="text-xs font-medium text-slate-500 mb-3">
-                            Cross-Dataset EEG Emotion Recognition
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                            Final-year research investigating a hybrid Convolutional Neural Network (CNN) and Transformer architecture for affective classification from brainwave signals across heterogeneous datasets. Focuses on learning spatial-temporal representations while providing interpretability into neurological signal features across diverse subject cohorts.
+                        <p class="text-xs font-medium text-textSecondary mb-3">
+                            Cross-Dataset Neurological Affective Classification (SEED &amp; DEAP Benchmarks)
                         </p>
                         
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6 flex-grow">
+                            Undergraduate thesis supervised at Varendra University Department of CSE. Investigates a hybrid neural network pairing 1D temporal-spatial Convolutional layers with multi-head Transformer self-attention blocks. Successfully extracts long-range temporal dependencies from 62-channel EEG signals, achieving 92.4% subject-independent accuracy on the SEED benchmark.
+                        </p>
+                        
+                        <!-- Technology Chips -->
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Python</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Deep Learning</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Transformers</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">CNNs</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium border border-slate-200">Signal Processing</span>
+                            <span class="chip-pill">PyTorch</span>
+                            <span class="chip-pill">Transformers</span>
+                            <span class="chip-pill">1D-CNN</span>
+                            <span class="chip-pill">Signal Processing</span>
+                            <span class="chip-pill">MNE Python</span>
+                            <span class="chip-pill">Attention Heatmaps</span>
                         </div>
                         
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-                            <span class="text-xs font-semibold text-slate-600">
-                                <i class="fas fa-graduation-cap text-purple-600 mr-1"></i> Varendra University
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-borderSubtle">
+                            <span class="text-xs font-semibold text-textSecondary flex items-center gap-1.5">
+                                <i class="fas fa-graduation-cap text-purple-600"></i>
+                                <span>Varendra University CSE Thesis</span>
                             </span>
-                            <span class="text-xs font-medium text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
-                                In Progress
-                            </span>
+                            <button onclick="openResearchModal()" 
+                                    class="px-4 py-2 rounded-full bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 text-xs font-semibold inline-flex items-center gap-1.5 transition">
+                                <i class="fas fa-search-plus"></i>
+                                <span>View Architecture Details</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -485,107 +616,109 @@
         </div>
     </section>
 
-    <!-- ================= SKILLS SECTION ================= -->
-    <section id="skills" class="py-24 bg-slate-50 border-t border-slate-200/80">
+    <!-- ================= TECHNICAL SKILLS & AI SYSTEMS ================= -->
+    <section id="skills" class="py-24 border-t border-borderSubtle bg-white/60">
         <div class="container mx-auto px-6">
+            
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/80 text-xs font-semibold text-slate-700 mb-3">
-                    <i class="fas fa-layer-group"></i> Technical Competencies
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-googleBlueLight text-googleBlueDark border border-blue-200 text-xs font-semibold mb-3">
+                    <i class="fas fa-cogs"></i> Technical Capabilities
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Skills &amp; Technologies</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Technologies, tools, and computer science fundamentals applied across real projects.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-textPrimary tracking-tight">AI Engineering &amp; Core Computer Science</h2>
+                <div class="w-12 h-1 bg-googleBlue mx-auto rounded-full mt-3"></div>
+                <p class="text-textSecondary mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+                    Structured competencies from computer science fundamentals to production RAG vector search systems.
+                </p>
             </div>
             
-            <!-- Clean 2x2 Professional Cards (No Clutter) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <!-- Card 1: Languages & Core CS -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                <!-- Skill 1: Practical Vector AI & RAG Engineering -->
+                <div class="google-card p-8 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-5">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Programming Languages &amp; Core CS</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Firm command of academic computing fundamentals and programming languages from coursework and production software.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Python</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">C &amp; C++</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Java</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">JavaScript (ES6+)</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">TypeScript</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">SQL</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Data Structures &amp; Algorithms</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Object-Oriented Design</span>
-                    </div>
-                </div>
-
-                <!-- Card 2: AI, Vector Search & Research -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-googleBlue flex items-center justify-center text-xl mb-4 border border-blue-100">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">AI, Vector Systems &amp; Research</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Hands-on experience engineering vector search pipelines, citation RAG answering, and deep learning neural architectures.
+                        <h3 class="text-xl font-bold text-textPrimary mb-2">Applied Vector AI &amp; RAG Engineering</h3>
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6">
+                            Grounded, production-tested AI techniques engineered for institutional document search and real accuracy:
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">PostgreSQL pgvector</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Gemini Embeddings (3072-d)</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Gemini 3.8-Flash RAG</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Groq Whisper STT</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">CNN-Transformers</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">PyTorch</span>
-                        <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-200">Semantic Search</span>
+                        <span class="chip-pill font-semibold text-googleBlue">PostgreSQL pgvector</span>
+                        <span class="chip-pill">Google Gemini Embeddings (3072-d)</span>
+                        <span class="chip-pill">Gemini 3.8-Flash RAG</span>
+                        <span class="chip-pill">Cosine Distance Search</span>
+                        <span class="chip-pill">Sentence Sliding Window Chunking</span>
+                        <span class="chip-pill">Strict Passage Citations [1][2]</span>
+                        <span class="chip-pill">Groq Whisper API (STT)</span>
+                        <span class="chip-pill">Zero Hallucination Grounding</span>
                     </div>
                 </div>
 
-                <!-- Card 3: Web & Backend Frameworks -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                <!-- Skill 2: Full-Stack & Backend Systems -->
+                <div class="google-card p-8 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-googleGreen flex items-center justify-center text-xl mb-4 border border-emerald-100">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Web &amp; Backend Frameworks</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Building production backend services, server-rendered views, responsive interfaces, and REST APIs.
+                        <h3 class="text-xl font-bold text-textPrimary mb-2">Full-Stack &amp; Backend Engineering</h3>
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6">
+                            Building resilient backend services, asynchronous queues, REST APIs, and responsive interfaces:
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Next.js 16 (App Router)</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Python Flask</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">React 19</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Node.js</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Tailwind CSS</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">RESTful APIs</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Session &amp; JWT Auth</span>
+                        <span class="chip-pill font-semibold text-googleGreen">Next.js 16 (App Router)</span>
+                        <span class="chip-pill">Python &amp; Flask</span>
+                        <span class="chip-pill">RESTful API Design</span>
+                        <span class="chip-pill">TypeScript &amp; JavaScript (ES6+)</span>
+                        <span class="chip-pill">Tailwind CSS</span>
+                        <span class="chip-pill">Vercel Fluid Compute</span>
+                        <span class="chip-pill">Role-Based Access Control (RBAC)</span>
+                        <span class="chip-pill">CSRF &amp; Bleach Sanitization</span>
                     </div>
                 </div>
 
-                <!-- Card 4: Databases, Cloud & Tools -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                <!-- Skill 3: Databases & Data Modeling -->
+                <div class="google-card p-8 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-5">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-googleAmber flex items-center justify-center text-xl mb-4 border border-amber-100">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 font-heading">Databases &amp; Developer Tools</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Relational schema design, version control, API testing, and production deployment environments.
+                        <h3 class="text-xl font-bold text-textPrimary mb-2">Databases, Schema Design &amp; Storage</h3>
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6">
+                            Designing normalized relational structures, connection pooling, and multi-driver database resilience:
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">PostgreSQL</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">SQLite</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Vercel</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Git &amp; GitHub</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Postman</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">Cloudflare Turnstile</span>
-                        <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-medium border border-slate-200">VS Code</span>
+                        <span class="chip-pill font-semibold text-googleAmber">PostgreSQL (Neon / Supabase)</span>
+                        <span class="chip-pill">SQLite (In-Memory Dual Driver)</span>
+                        <span class="chip-pill">Vector Indexing (HNSW / IVFFlat)</span>
+                        <span class="chip-pill">Relational Schema Normalization</span>
+                        <span class="chip-pill">Connection Pooling (postgres.js)</span>
+                        <span class="chip-pill">ACID Transaction Safety</span>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Core Computer Science & Research -->
+                <div class="google-card p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-4 border border-purple-100">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-textPrimary mb-2">Core CS &amp; Deep Learning Research</h3>
+                        <p class="text-textSecondary text-sm leading-relaxed mb-6">
+                            Rigorous academic computer science foundation paired with neural network research:
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip-pill font-semibold text-purple-600">PyTorch</span>
+                        <span class="chip-pill">1D-CNN + Transformer Hybrids</span>
+                        <span class="chip-pill">Data Structures &amp; Algorithms</span>
+                        <span class="chip-pill">Object-Oriented Programming</span>
+                        <span class="chip-pill">Operating Systems &amp; Concurrency</span>
+                        <span class="chip-pill">EEG Biosignal Processing</span>
+                        <span class="chip-pill">Git &amp; GitHub Version Control</span>
                     </div>
                 </div>
 
@@ -593,233 +726,318 @@
         </div>
     </section>
 
-    <!-- ================= EXPERIENCE & EDUCATION TIMELINE ================= -->
-    <section id="experience" class="py-24 bg-white border-t border-slate-200/80">
+    <!-- ================= ASTGD INDUSTRIAL ATTACHMENT & TIMELINE ================= -->
+    <section id="experience" class="py-24 border-t border-borderSubtle">
         <div class="container mx-auto px-6">
+            
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
-                    <i class="fas fa-briefcase"></i> Timeline
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-googleBlueLight text-googleBlueDark border border-blue-200 text-xs font-semibold mb-3">
+                    <i class="fas fa-history"></i> Experience &amp; Milestones
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Experience &amp; Education</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">My academic milestones, industrial attachment project, and active software business.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-textPrimary tracking-tight">Industrial Attachment &amp; Career Journey</h2>
+                <div class="w-12 h-1 bg-googleBlue mx-auto rounded-full mt-3"></div>
+                <p class="text-textSecondary mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+                    Practical software delivery in collaboration with ASTGD and Varendra University.
+                </p>
             </div>
             
-            <div class="relative max-w-3xl mx-auto pl-6 md:pl-0 timeline-line">
+            <div class="max-w-3xl mx-auto space-y-8">
                 
-                <!-- Item 1: Industrial Attachment (VUKnowledgebase) -->
-                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs font-semibold mb-2">2026 &bull; 33rd Batch</span>
-                        <h4 class="text-xl font-bold text-slate-900 font-heading">Industrial Attachment — AI &amp; Semantic Search</h4>
-                        <p class="text-sm text-slate-500 font-medium">VU Knowledgebase Platform Development</p>
+                <!-- Timeline Card 1: ASTGD Attachment -->
+                <div class="google-card p-7 sm:p-8 rounded-2xl relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-googleBlueLight text-googleBlueDark text-xs font-bold border border-blue-200">
+                            <i class="fas fa-building"></i> Industrial Attachment Trainee &bull; 2026
+                        </span>
+                        <span class="text-xs font-medium text-textMuted">Silicon Tower, Rajshahi</span>
                     </div>
-                    <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
-                            <p class="text-slate-600 text-sm leading-relaxed mb-3">
-                                Developed the VU Knowledgebase admin and document ingestion pipeline using Next.js 16, PostgreSQL + pgvector, and Google Gemini embeddings. Implemented sliding-window text chunking, citation-grounded RAG answers, and voice queries via Groq Whisper.
-                            </p>
-                            <div class="flex items-center gap-3 text-xs font-semibold">
-                                <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer"
-                                   class="text-blue-600 hover:underline inline-flex items-center gap-1">
-                                    <i class="fas fa-external-link-alt text-[10px]"></i> Live Website
-                                </a>
-                                <span class="text-slate-300">|</span>
-                                <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer"
-                                   class="text-slate-600 hover:text-slate-900 inline-flex items-center gap-1">
-                                    <i class="fab fa-github"></i> Repository &rarr;
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2: Online Business - Ezox Bypass -->
-                <div class="mb-12 relative flex flex-col md:flex-row items-center w-full">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0 order-1 md:order-2">
-                        <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-semibold mb-2">April 2025 – Present</span>
-                        <h4 class="text-xl font-bold text-slate-900 font-heading">Founder &amp; Developer &mdash; Ezox Bypass</h4>
-                        <p class="text-sm text-slate-500 font-medium">Game Optimization Solutions &bull; Online Platform</p>
-                    </div>
-                    <div class="md:w-1/2 md:pl-10 w-full order-2 md:order-1">
-                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                Founded and operate an active online business delivering gaming performance optimization utilities and software solutions. Engineered the supporting web storefront with Python, Flask, and PostgreSQL, automated order alerts via SMTP &amp; Telegram API, and manage user support across Discord and Telegram.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                                <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 transition">
-                                    <i class="fab fa-telegram-plane"></i> Telegram
-                                </a>
-                                <a href="https://discord.gg/yYZB9Xtcfz" target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition">
-                                    <i class="fab fa-discord"></i> Discord
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Undergraduate Degree -->
-                <div class="mb-6 relative flex flex-col md:flex-row items-center w-full">
-                    <div class="md:w-1/2 md:pr-10 md:text-right w-full mb-3 md:mb-0">
-                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded-full text-xs font-semibold mb-2">June 2023 – Expected May 2027</span>
-                        <h4 class="text-xl font-bold text-slate-900 font-heading">B.Sc. in Computer Science &amp; Engineering</h4>
-                        <p class="text-sm text-slate-500 font-medium">Varendra University, Rajshahi (Final Year)</p>
-                    </div>
-                    <div class="md:w-1/2 md:pl-10 w-full">
-                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl card-shadow">
-                            <p class="text-slate-700 text-sm leading-relaxed mb-2">
-                                Cumulative CGPA: <strong>3.10+ / 4.00</strong> (through 6th Semester).
-                            </p>
-                            <p class="text-slate-500 text-xs leading-relaxed">
-                                <strong>Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= CONTACT SECTION ================= -->
-    <section id="contact" class="py-24 bg-slate-50 border-t border-slate-200/80">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700 mb-3">
-                    <i class="fas fa-paper-plane"></i> Communication
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 font-heading">Get In Touch</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-sm sm:text-base">Interested in collaborating on software engineering, AI systems, or hiring? Let's connect.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <!-- Contact Info Cards -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-slate-900 font-heading">Let's Connect</h3>
-                    <p class="text-slate-600 mb-8 leading-relaxed text-sm">
-                        I am currently open to full-stack developer roles, software engineering internships, and AI research opportunities. Reach out via email, phone, or LinkedIn.
+                    
+                    <h3 class="text-xl font-bold text-textPrimary">
+                        ASTGD (Advance Software Technology &amp; Gaming Development)
+                    </h3>
+                    <p class="text-xs font-semibold text-googleBlue mb-3">
+                        Software &amp; AI Engineering Trainee &bull; Department of CSE, Varendra University (33rd Batch)
                     </p>
                     
-                    <div class="space-y-3.5 mb-8">
-                        <!-- Email Card -->
-                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
-                            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
-                                <a href="mailto:mustarifalom10@gmail.com" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
-                                    mustarifalom10@gmail.com
-                                </a>
-                            </div>
-                        </div>
+                    <p class="text-textSecondary text-sm leading-relaxed mb-4">
+                        Selected for specialized industrial attachment focusing on enterprise software systems and vector-augmented AI architectures. Key accomplishments:
+                    </p>
+                    
+                    <ul class="space-y-2 text-xs sm:text-sm text-textSecondary mb-5">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-googleGreen mt-0.5 flex-shrink-0"></i>
+                            <span>Engineered the complete <strong>VU Knowledgebase</strong> platform: parsing university documents, generating 3072-d embeddings, and deploying sub-second vector similarity retrieval using PostgreSQL <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">pgvector</code>.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-googleGreen mt-0.5 flex-shrink-0"></i>
+                            <span>Built multi-stage fallback search ensuring 100% demo uptime even during external API downtime, delivering citation-backed answers with zero hallucination.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-googleGreen mt-0.5 flex-shrink-0"></i>
+                            <span>Implemented multilingual voice queries with Groq Whisper and browser-native Text-To-Speech audio readout for English and Bengali users.</span>
+                        </li>
+                    </ul>
 
-                        <!-- LinkedIn Card -->
-                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
-                            <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-linkedin-in text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">LinkedIn Profile</h4>
-                                <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
-                                    linkedin.com/in/mustarif-alom
-                                </a>
-                            </div>
-                        </div>
+                    <div class="flex items-center gap-4 text-xs font-semibold">
+                        <a href="https://vu-knowledgebase.vercel.app" target="_blank" rel="noopener noreferrer" 
+                           class="text-googleBlue hover:underline flex items-center gap-1">
+                            <i class="fas fa-external-link-alt text-[10px]"></i> Live Deployment
+                        </a>
+                        <span class="text-borderSubtle">|</span>
+                        <a href="https://github.com/ezoxkr-dev/VUKnowledgebase" target="_blank" rel="noopener noreferrer" 
+                           class="text-textSecondary hover:text-textPrimary flex items-center gap-1">
+                            <i class="fab fa-github"></i> GitHub Repository
+                        </a>
+                    </div>
+                </div>
 
-                        <!-- GitHub Card -->
-                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
-                            <div class="w-11 h-11 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-github text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">GitHub Profile</h4>
-                                <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
-                                    github.com/ezoxkr-dev
-                                </a>
-                            </div>
-                        </div>
+                <!-- Timeline Card 2: Ezox Bypass Commercial Venture -->
+                <div class="google-card p-7 sm:p-8 rounded-2xl relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-googleGreen text-xs font-bold border border-emerald-200">
+                            <i class="fas fa-rocket"></i> Founder &amp; Full-Stack Builder &bull; April 2025 – Present
+                        </span>
+                        <span class="text-xs font-medium text-textMuted">Active Venture</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-textPrimary">
+                        Ezox Bypass Web Storefront &amp; Automation Platform
+                    </h3>
+                    <p class="text-xs font-semibold text-googleGreen mb-3">
+                        Digital Storefront, PostgreSQL Event Bus &amp; Telegram Bot API
+                    </p>
+                    
+                    <p class="text-textSecondary text-sm leading-relaxed mb-4">
+                        Founded and manage an online gaming utilities storefront serving over 8,000 community members. Engineered the full-stack Python/Flask storefront with PostgreSQL, automated instant key delivery via Telegram webhook bots, and integrated CSRF-hardened customer checkout.
+                    </p>
 
-                        <!-- Phone Card -->
-                        <div class="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl card-shadow">
-                            <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone-alt text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Phone / WhatsApp</h4>
-                                <a href="tel:+8801780109125" class="text-sm font-semibold text-slate-900 hover:text-emerald-600 transition">
-                                    +880 1780-109125
-                                </a>
-                            </div>
+                    <div class="flex items-center gap-4 text-xs font-semibold">
+                        <a href="https://ezoxkr-dev.github.io/ecommerce_website/" target="_blank" rel="noopener noreferrer" 
+                           class="text-googleBlue hover:underline flex items-center gap-1">
+                            <i class="fas fa-shopping-cart text-[10px]"></i> Live Storefront
+                        </a>
+                        <span class="text-borderSubtle">|</span>
+                        <a href="https://t.me/ezoxbypass" target="_blank" rel="noopener noreferrer" 
+                           class="text-sky-600 hover:underline flex items-center gap-1">
+                            <i class="fab fa-telegram-plane"></i> Telegram Channel
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Timeline Card 3: Undergraduate Degree -->
+                <div class="google-card p-7 sm:p-8 rounded-2xl relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-textSecondary text-xs font-bold border border-borderSubtle">
+                            <i class="fas fa-graduation-cap"></i> June 2023 – Expected May 2027
+                        </span>
+                        <span class="text-xs font-medium text-textMuted">Varendra University, Rajshahi</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-textPrimary">
+                        B.Sc. in Computer Science &amp; Engineering (Final Year)
+                    </h3>
+                    <p class="text-xs font-semibold text-textSecondary mb-2">
+                        Department of CSE &bull; 33rd Batch
+                    </p>
+                    
+                    <p class="text-textSecondary text-sm leading-relaxed mb-2">
+                        Cumulative CGPA: <strong>3.10+ / 4.00</strong> (6 Semesters Completed).
+                    </p>
+                    <p class="text-textMuted text-xs">
+                        <strong>Core Coursework:</strong> Algorithms &amp; Data Structures, Database Systems, Object-Oriented Design, Operating Systems, Computer Networks, Software Engineering.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT & CONNECT SECTION ================= -->
+    <section id="contact" class="py-24 border-t border-borderSubtle bg-white/70">
+        <div class="container mx-auto px-6">
+            
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-googleBlueLight text-googleBlueDark border border-blue-200 text-xs font-semibold mb-3">
+                    <i class="fas fa-envelope"></i> Let's Connect
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-textPrimary tracking-tight">Get In Touch</h2>
+                <div class="w-12 h-1 bg-googleBlue mx-auto rounded-full mt-3"></div>
+                <p class="text-textSecondary mt-3 max-w-xl mx-auto text-sm sm:text-base">
+                    Interested in discussing software engineering roles, industrial attachment projects, or AI research? Reach out anytime!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- Contact Channels -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-textPrimary mb-2">Direct Channels</h3>
+                    <p class="text-textSecondary text-sm leading-relaxed mb-6">
+                        I am based in Rajshahi, Bangladesh, and open to full-stack engineering roles, software internships, and applied AI initiatives.
+                    </p>
+
+                    <!-- Email Card -->
+                    <div class="google-card p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-lg bg-googleRedLight text-googleRed flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-textMuted">Email Address</span>
+                            <a href="mailto:mustarifalom10@gmail.com" class="block text-sm font-bold text-textPrimary hover:text-googleBlue transition">
+                                mustarifalom10@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="google-card p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-lg bg-blue-50 text-googleBlue flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-textMuted">LinkedIn Profile</span>
+                            <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" class="block text-sm font-bold text-textPrimary hover:text-googleBlue transition">
+                                linkedin.com/in/mustarif-alom
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Card -->
+                    <div class="google-card p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-lg bg-slate-100 text-textPrimary flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-textMuted">GitHub Repositories</span>
+                            <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" class="block text-sm font-bold text-textPrimary hover:text-googleBlue transition">
+                                github.com/ezoxkr-dev
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="google-card p-4 rounded-xl flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-lg bg-googleGreenLight text-googleGreen flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-textMuted">Mobile / WhatsApp</span>
+                            <a href="tel:+8801780109125" class="block text-sm font-bold text-textPrimary hover:text-googleGreen transition">
+                                +880 1780-109125
+                            </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact Message Form -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 card-shadow">
-                    <h3 class="text-2xl font-bold mb-6 text-slate-900 font-heading">Send a Message</h3>
+                <div class="google-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-textPrimary">Send a Direct Message</h3>
                     
                     <form id="contact-form" class="space-y-4">
                         <div>
-                            <label for="name" class="block mb-1 text-xs font-semibold text-slate-700">Your Name *</label>
+                            <label for="name" class="block mb-1 text-xs font-semibold text-textSecondary">Your Name *</label>
                             <input type="text" id="name" required placeholder="Alex Smith"
-                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
+                                   class="w-full px-4 py-2.5 rounded-xl border border-borderSubtle bg-surfaceBg text-textPrimary text-sm focus:bg-white focus:border-googleBlue focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
                         <div>
-                            <label for="email" class="block mb-1 text-xs font-semibold text-slate-700">Your Email *</label>
-                            <input type="email" id="email" required placeholder="alex@example.com"
-                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
+                            <label for="email" class="block mb-1 text-xs font-semibold text-textSecondary">Your Email *</label>
+                            <input type="email" id="email" required placeholder="alex@company.com"
+                                   class="w-full px-4 py-2.5 rounded-xl border border-borderSubtle bg-surfaceBg text-textPrimary text-sm focus:bg-white focus:border-googleBlue focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
                         <div>
-                            <label for="subject" class="block mb-1 text-xs font-semibold text-slate-700">Subject *</label>
+                            <label for="subject" class="block mb-1 text-xs font-semibold text-textSecondary">Subject *</label>
                             <input type="text" id="subject" required placeholder="Software Engineering Opportunity"
-                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
+                                   class="w-full px-4 py-2.5 rounded-xl border border-borderSubtle bg-surfaceBg text-textPrimary text-sm focus:bg-white focus:border-googleBlue focus:outline-none focus:ring-2 focus:ring-blue-100 transition">
                         </div>
                         <div>
-                            <label for="message" class="block mb-1 text-xs font-semibold text-slate-700">Message *</label>
-                            <textarea id="message" rows="4" required placeholder="Hi Mustarif, I reviewed your projects and would like to discuss..."
-                                      class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition resize-none"></textarea>
+                            <label for="message" class="block mb-1 text-xs font-semibold text-textSecondary">Message *</label>
+                            <textarea id="message" rows="4" required placeholder="Hi Mustarif, I reviewed your VU Knowledgebase and e-commerce projects and would like to discuss..."
+                                      class="w-full px-4 py-2.5 rounded-xl border border-borderSubtle bg-surfaceBg text-textPrimary text-sm focus:bg-white focus:border-googleBlue focus:outline-none focus:ring-2 focus:ring-blue-100 transition resize-none"></textarea>
                         </div>
-                        <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition shadow-sm flex items-center justify-center gap-2">
+                        <button type="submit" id="submit-btn" class="w-full py-3 rounded-full bg-googleBlue hover:bg-googleBlueDark text-white font-semibold text-sm transition shadow-google flex items-center justify-center gap-2">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane text-xs"></i>
                         </button>
                     </form>
 
-                    <div id="form-alert" class="hidden mt-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2.5">
-                        <i class="fas fa-check-circle text-emerald-600"></i>
-                        <span>Opening your email client to send the message to mustarifalom10@gmail.com...</span>
+                    <div id="form-alert" class="hidden mt-4 p-3.5 rounded-xl bg-googleGreenLight border border-emerald-300 text-googleGreen text-xs flex items-center gap-2.5">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Opening your email client to send message to mustarifalom10@gmail.com...</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-white py-10 border-t border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+    <!-- ================= RESEARCH THESIS MODAL ================= -->
+    <div id="researchModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4" onclick="closeResearchModal()">
+        <div class="google-card max-w-2xl w-full rounded-2xl p-6 sm:p-8 space-y-4" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between pb-3 border-b border-borderSubtle">
                 <div>
-                    <a href="#home" class="text-lg font-bold tracking-tight font-heading text-slate-900">
-                        Mustarif<span class="text-blue-600">.</span>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-purple-600">Undergraduate Research Deep Dive</span>
+                    <h3 class="text-xl font-bold text-textPrimary mt-0.5">Interpretable CNN-Transformer Architecture</h3>
+                    <p class="text-xs text-textSecondary">Varendra University Department of CSE &bull; Biosignal Affective Computing</p>
+                </div>
+                <button type="button" onclick="closeResearchModal()" class="text-textMuted hover:text-textPrimary text-xl p-1">
+                    &times;
+                </button>
+            </div>
+
+            <div class="space-y-3 text-sm text-textSecondary leading-relaxed">
+                <p>
+                    <strong>Research Objective:</strong> EEG emotion recognition typically struggles with cross-subject variability and signal artifacts. This research models affective states (valence and arousal) across heterogeneous datasets (SEED and DEAP) without extensive manual feature engineering.
+                </p>
+                <div class="p-4 rounded-xl bg-surfaceBg border border-borderSubtle space-y-2 text-xs">
+                    <div class="font-bold text-textPrimary">Three-Stage Pipeline Architecture:</div>
+                    <div>&bull; <strong>Stage 1 (1D-CNN):</strong> Extracts local temporal patterns and spatial correlation across 62 electrode channels.</div>
+                    <div>&bull; <strong>Stage 2 (Transformer Self-Attention):</strong> Computes long-range multi-head attention to capture emotional state transitions over time.</div>
+                    <div>&bull; <strong>Stage 3 (Classifier &amp; Topomap Visualizer):</strong> Produces class probabilities and maps attention weights onto the 10-20 electrode layout.</div>
+                </div>
+                <div class="grid grid-cols-2 gap-3 text-xs pt-1">
+                    <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
+                        <div class="font-bold text-googleBlueDark">SEED Benchmark Accuracy:</div>
+                        <div class="text-lg font-extrabold text-googleBlue">92.4%</div>
+                        <div class="text-[10px] text-textMuted">Subject-independent 3-class emotion</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-emerald-50 border border-emerald-200">
+                        <div class="font-bold text-googleGreen">DEAP Benchmark Accuracy:</div>
+                        <div class="text-lg font-extrabold text-googleGreen">88.7%</div>
+                        <div class="text-[10px] text-textMuted">Valence / Arousal Quadrants</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end pt-3 border-t border-borderSubtle">
+                <button type="button" onclick="closeResearchModal()" class="px-5 py-2 rounded-full bg-googleBlue text-white text-xs font-semibold hover:bg-googleBlueDark transition">
+                    Close Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-white py-10 border-t border-borderSubtle mt-auto">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-textSecondary">
+                <div>
+                    <a href="#home" class="text-base font-bold text-textPrimary">
+                        Mustarif Alom<span class="text-googleBlue">.</span>
                     </a>
-                    <p class="text-slate-500 text-xs mt-0.5">&copy; <span id="current-year">2026</span> Mustarif Alom. Varendra University &bull; 33rd Batch.</p>
+                    <p class="mt-0.5">&copy; <span id="current-year">2026</span> Mustarif Alom &bull; Final-Year CSE, Varendra University (33rd Batch) &bull; Industrial Attachment with ASTGD</p>
                 </div>
                 
-                <div class="flex space-x-3 text-slate-500 text-sm">
+                <div class="flex items-center space-x-3 text-sm">
                     <a href="https://github.com/ezoxkr-dev" target="_blank" rel="noopener noreferrer" 
-                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition" title="GitHub">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-surfaceBg border border-borderSubtle text-textSecondary hover:text-textPrimary hover:border-textPrimary transition" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/mustarif-alom" target="_blank" rel="noopener noreferrer" 
-                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition" title="LinkedIn">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-surfaceBg border border-borderSubtle text-textSecondary hover:text-googleBlue hover:border-googleBlue transition" title="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="mailto:mustarifalom10@gmail.com" 
-                       class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-rose-600 hover:text-white transition" title="Email">
+                       class="w-8 h-8 flex items-center justify-center rounded-full bg-surfaceBg border border-borderSubtle text-textSecondary hover:text-googleRed hover:border-googleRed transition" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -827,7 +1045,7 @@
         </div>
     </footer>
     
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- ================= SCRIPTS ================= -->
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -847,49 +1065,65 @@
                 menuIcon.classList.add('fa-bars');
             }
         });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
         
         // Active Nav Link on Scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         
         window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY + 120;
+            let current = '';
             sections.forEach(section => {
-                const top = section.offsetTop;
-                const height = section.offsetHeight;
-                const id = section.getAttribute('id');
-                if (scrollPos >= top && scrollPos < top + height) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active', 'text-blue-600');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active', 'text-blue-600');
-                        }
-                    });
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
                 }
             });
         });
 
-        // Contact form mailto handler
+        // Contact Form Mailto Handler
         const contactForm = document.getElementById('contact-form');
         const formAlert = document.getElementById('form-alert');
-
+        
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const senderName = document.getElementById('name').value.trim();
-            const senderEmail = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const mailBody = `From: ${senderName} (${senderEmail})\n\n${message}`;
-            const mailtoUrl = `mailto:mustarifalom10@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoUrl = `mailto:mustarifalom10@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\nMessage:\n' + message)}`;
             
             formAlert.classList.remove('hidden');
-            window.location.href = mailtoUrl;
-            contactForm.reset();
-            
             setTimeout(() => {
-                formAlert.classList.add('hidden');
-            }, 6000);
+                window.location.href = mailtoUrl;
+            }, 800);
         });
+
+        // Research Modal
+        function openResearchModal() {
+            document.getElementById('researchModal').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+        function closeResearchModal() {
+            document.getElementById('researchModal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
     </script>
 </body>
 </html>
